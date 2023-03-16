@@ -1,8 +1,7 @@
 # team_1
 1조 팀프로젝트입니다!
 
-https://app.diagrams.net/에서 erd 읽을 수 있습니다.
+erd와 스토리보드 txt파일 등은 google drive로 옮겼습니다.
 
-오늘 선생님과 함께 수정한 내용은 full.drawio 파일입니다.
+https://drive.google.com/drive/folders/1le0yjGaEXDdBtJXG4Kru_iQj-80g8T-_?usp=share_link
 
-github 참고 : https://github.com/CodMeister/repository/wiki
