@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="Inquiry_category">
+	
+	<select id="selectAll" resultType="Inquiry_category">
+		select * from inquiry_category order by inquiry_category_idx asc
+	</select>
+	
+	<select id="select" parameterType="int" resultType="Inquiry_category">
+		select * from inquiry_category where inquiry_category_idx=#{inquiry_category_idx}
+	</select>
+	
+	<insert id="insert" parameterType="Inquiry_category">
+		insert into inquiry_category(inquiry_category_name)
+		values(#{inquiry_category_name})
+	</insert>
+	
+	<update id="update" parameterType="Inquiry_category">
+		update inquiry_category set inquiry_category_name=#{inquiry_category_name}
+		where inquiry_category_idx=#{inquiry_category_idx}
+	</update>
+	
+	<delete id="delete" parameterType="int">
+		delete from inquiry_category where inquiry_category_idx=#{inquiry_category_idx}
+	</delete>
+	
+</mapper>

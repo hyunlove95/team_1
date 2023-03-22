@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+  <typeAliases>
+  		<typeAlias type="team1.project.bookshop.domain.Admin" 	alias="Admin"/>
+  		<typeAlias type="team1.project.bookshop.domain.Notice" 	alias="Notice"/>
+  		<typeAlias type="team1.project.bookshop.domain.Inquiry_category" 	alias="Inquiry_category"/>
+  </typeAliases>
+  
+  <mappers>
+  		<mapper resource="team1/project/bookshop/mybatis/AdminMapper.xml"/>
+  		<mapper resource="team1/project/bookshop/mybatis/NoticeMapper.xml"/>
+  		<mapper resource="team1/project/bookshop/mybatis/Inquiry_categoryMapper.xml"/>
+  </mappers>
+  
+</configuration>
