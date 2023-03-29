@@ -146,11 +146,11 @@
 			//비동기로 등록요청
 			
 			$.ajax({
-				url:"/bookshop/admin/rest/notice/regist",
-				type:"post", 
+				url:"/admin/rest/notice",
+				type:"POST", 
 				data:formData,
 				success:function(result, status, xhr){
-					location.href="/bookshop/admin/notice/list";
+					location.href="/admin/notice/list";
 				}
 			});
 			
@@ -159,7 +159,7 @@
 		//서머노트 적용하기 
 		$(function(){
 			$("#content").summernote({
-				height:200
+				height:400
 			});
 						
 			//등록 이벤트 연결 
@@ -168,7 +168,7 @@
 			});
 			
 			$("#bt_list").click(function(){
-				location.href="/bookshop/admin/notice/list";
+				location.href="/admin/notice/list";
 			});
 			
 		});

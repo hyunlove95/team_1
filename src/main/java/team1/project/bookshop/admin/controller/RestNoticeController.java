@@ -1,6 +1,7 @@
 package team1.project.bookshop.admin.controller;
 
-import javax.servlet.ServletContext;
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 
 import org.slf4j.Logger;
@@ -8,9 +9,13 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import team1.project.bookshop.domain.Notice;
@@ -30,9 +35,8 @@ public class RestNoticeController {
 	@Autowired
 	private NoticeService noticeService;
 	
-	
 	//공지 등록 요청 처리
-	@RequestMapping(value="/notice/regist", method=RequestMethod.POST)
+	@RequestMapping(value="/notice", method=RequestMethod.POST)
 	public ResponseEntity<Message> regist(Notice notice, HttpServletRequest request) {
 		logger.info("notice is "+notice);
 				
@@ -46,7 +50,12 @@ public class RestNoticeController {
 		return entity;
 	}
 	
-		
+	
+	@GetMapping("/notice")
+	public List getList(HttpServletRequest request) {
+		return noticeService.selectAll();
+	}
+	
 	@ExceptionHandler(NoticeException.class)
 	public ResponseEntity<Message> handle(NoticeException e){
 		Message message = new Message();

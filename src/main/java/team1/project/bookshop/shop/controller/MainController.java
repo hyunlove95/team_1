@@ -27,7 +27,7 @@ public class MainController {
 		//4단계 : 저장할 것이 있다(왜? jsp로 가져가야 하니깐..)
 		ModelAndView mav = new ModelAndView();
 		mav.addObject("inquiry_categoryList", inquiry_categoryList);
-		mav.setViewName("shop/index");
+		mav.setViewName("bookshop/index");
 		
 		return mav;
 	}

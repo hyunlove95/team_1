@@ -101,10 +101,10 @@
 					                        <tr>
 					                            <td><%=i%></td>
 					                            <td>
-					                            	<a href="/bookshop/admin/notice/detail?notice_idx=<%=notice.getNotice_idx()%>"><%=notice.getTitle() %></a>
+					                            	<a href="/admin/notice/detail?notice_idx=<%=notice.getNotice_idx()%>"><%=notice.getTitle() %></a>
 					                            </td>
 					                            <td><%=notice.getWriter() %></td>
-					                            <td><%=notice.getRegdate()%></td>
+					                            <td><%=notice.getRegdate().substring(0, 10)%></td>
 					                        </tr>
 					                        <%} %>
 										</tbody>
@@ -139,7 +139,7 @@
 
 			
 	$("#bt_regist").click(function(){
-		location.href="/bookshop/admin/notice/registform";
+		location.href="/admin/notice/registform";
 	});
 	
 	</script>

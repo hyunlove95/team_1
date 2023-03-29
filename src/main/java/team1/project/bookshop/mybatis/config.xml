@@ -7,12 +7,16 @@
   		<typeAlias type="team1.project.bookshop.domain.Admin" 	alias="Admin"/>
   		<typeAlias type="team1.project.bookshop.domain.Notice" 	alias="Notice"/>
   		<typeAlias type="team1.project.bookshop.domain.Inquiry_category" 	alias="Inquiry_category"/>
+  		<typeAlias type="team1.project.bookshop.domain.Inquiry_img" 	alias="Inquiry_img"/>
+  		<typeAlias type="team1.project.bookshop.domain.Inquiry" 	alias="Inquiry"/>
   </typeAliases>
   
   <mappers>
   		<mapper resource="team1/project/bookshop/mybatis/AdminMapper.xml"/>
   		<mapper resource="team1/project/bookshop/mybatis/NoticeMapper.xml"/>
   		<mapper resource="team1/project/bookshop/mybatis/Inquiry_categoryMapper.xml"/>
+  		<mapper resource="team1/project/bookshop/mybatis/Inquiry_imgMapper.xml"/>
+  		<mapper resource="team1/project/bookshop/mybatis/InquiryMapper.xml"/>
   </mappers>
   
 </configuration>

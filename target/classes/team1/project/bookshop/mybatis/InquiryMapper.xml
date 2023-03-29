@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="Inquiry">
+
+	<resultMap type="Inquiry" id="inquiryMap">
+		<id 		column="inquiry_idx" 		property="inquiry_idx"/>
+		<result 	column="title" 					property="title"/>
+		<result 	column="content" 				property="content"/>
+		<result 	column="regdate" 				property="regdate"/>
+		<result 	column="result" 				property="result"/>
+		
+		<!-- 부모인 member와  association -->
+		<!--  
+		<association 
+			column="member_idx" 
+			property="member"
+			javaType="Member"
+			select="Member.select"/> -->
+			
+		<!-- 부모인 inquiry_category와  association -->
+		<association 
+			column="inquiry_category_idx" 
+			property="inquiry_category"
+			javaType="Inquiry_category"
+			select="Inquiry_category.select"/>
+			
+		<!-- 자식인  inquiry_img와  collection -->
+		<collection  
+			column="inquiry_idx" 
+			property="inquiry_imgList"
+			javaType="java.util.List"
+			ofType="inquiry_img"
+			select="Inquiry_img.selectByInquiry"/>
+			
+	</resultMap>
+		
+	<!-- 해당 상품에 소속된 이미지를 포함한 레코드 가져오기  -->
+	<select id="selectAll" resultMap="inquiryMap">
+		select * from inquiry order by inquiry_idx desc
+	</select>
+	
+	<!-- 해당 상품에 소속된 이미지를 포함한 레코드 가져오기  -->
+	<select id="select" resultMap="inquiryMap" parameterType="int">
+		select * from inquiry where inquiry_idx=#{inquiry_idx} 
+	</select>	
+	
+	<insert id="insert" parameterType="Inquiry">
+		insert into inquiry(inquiry_category_idx, title, content, result)
+		values(#{inquiry_category.inquiry_category_idx}, #{title}, #{content}, #{result})
+		
+		<selectKey 
+			keyColumn="inquiry_idx" 
+			keyProperty="inquiry_idx"
+			order="AFTER"
+			resultType="int">
+			select last_insert_id() as inquiry_idx
+		</selectKey>
+				
+	</insert>
+	
+	<update id="update" parameterType="Inquiry">
+		update product set inquriy_category_idx=#{inquriy_category.inquriy_category_idx} 
+		, title=#{title}
+		, content=#{content}
+		, regdate=#{regdate}
+		, result=#{result}
+		where inquiry_idx=#{inquiry_idx}
+	</update>
+	
+	<delete id="delete" parameterType="int">
+		delete from inquiry where inquiry_idx=#{inquiry_idx} 
+	</delete>
+
+</mapper>
