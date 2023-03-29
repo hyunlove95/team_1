@@ -61,6 +61,11 @@ public class RestInquiryController {
 		public List getList(HttpServletRequest request) {
 			return inquiryService.selectAll();
 		}
+		
+		@GetMapping("/searchInquiry")
+		public List search(HttpServletRequest request, String title) {
+			return inquiryService.selectByWord(title);
+		}
 
 		@ExceptionHandler(InquiryException.class)
 		public ResponseEntity<Message> handle(InquiryException e){

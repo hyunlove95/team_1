@@ -10,4 +10,5 @@ public interface InquiryService {
 	public void regist(Inquiry inquiry, String dir); //db연동+file제어+메일발송+sms
 	public void update(Inquiry inquiry);
 	public void delete(int inquiry_idx);
+	public List selectByWord(String title);
 }

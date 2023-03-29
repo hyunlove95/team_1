@@ -58,17 +58,30 @@
 				
 	</insert>
 	
+	
 	<update id="update" parameterType="Inquiry">
 		update product set inquriy_category_idx=#{inquriy_category.inquriy_category_idx} 
 		, title=#{title}
 		, content=#{content}
-		, regdate=#{regdate}
 		, result=#{result}
+		where inquiry_idx=#{inquiry_idx}
+	</update>
+	
+	
+	<!-- 조회수 증가 쿼리 -->
+	<update id="hitUp" parameterType="int">
+		update inquiry set hit=hit+1
 		where inquiry_idx=#{inquiry_idx}
 	</update>
 	
 	<delete id="delete" parameterType="int">
 		delete from inquiry where inquiry_idx=#{inquiry_idx} 
 	</delete>
-
+	
+	
+	<select id="selectByWord" parameterType="String" resultMap="inquiryMap">
+		select * from inquiry
+		where title like CONCAT('%', #{title}, '%')
+	</select>
+	
 </mapper>

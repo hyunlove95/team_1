@@ -22,11 +22,11 @@ public class NoticeController {
 	@GetMapping("/notice/list")
 	public ModelAndView getList(HttpServletRequest request) {
 		//3단계
-		List noticeList=noticeService.selectAll();
+		//List noticeList=noticeService.selectAll();
 		
 		//4단계
 		ModelAndView mav = new ModelAndView("bookshop/notice/list2");
-		mav.addObject("noticeList", noticeList);
+		//mav.addObject("noticeList", noticeList);
 		
 		return mav;
 	}

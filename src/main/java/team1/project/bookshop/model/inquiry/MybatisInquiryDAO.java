@@ -48,5 +48,16 @@ public class MybatisInquiryDAO implements InquiryDAO{
 			throw new InquiryException("1:1 문의 삭제 실패");
 		}
 	}
+	
+	@Override
+	public void hitUp(int inquiry_idx) {
+		int result=sqlSessionTemplate.update("Inquiry.hitUp", inquiry_idx);
+	}
+
+	@Override
+	public List selectByWord(String title) {
+		return sqlSessionTemplate.selectList("Inquiry.selectByWord", title);
+	}
+
 
 }

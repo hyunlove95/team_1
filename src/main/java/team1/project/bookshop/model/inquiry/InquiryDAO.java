@@ -10,4 +10,6 @@ public interface InquiryDAO {
 	public void insert(Inquiry inquiry);
 	public void update(Inquiry inquiry);
 	public void delete(int inquiry_idx);
+	public void hitUp(int inquiry_idx);
+	public List selectByWord(String title);
 }

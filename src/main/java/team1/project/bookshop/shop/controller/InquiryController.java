@@ -10,8 +10,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import team1.project.bookshop.domain.Inquiry;
-import team1.project.bookshop.model.inquiry_category.Inquiry_categoryService;
 import team1.project.bookshop.model.inquiry.InquiryService;
+import team1.project.bookshop.model.inquiry_category.Inquiry_categoryService;
+import team1.project.bookshop.util.PageManager2;
 
 //1:1 문의 게시판 컨트롤러
 @Controller
@@ -39,11 +40,11 @@ public class InquiryController {
 	@GetMapping("/inquiry/list")
 	public ModelAndView getList(HttpServletRequest request) {
 		//3단계 
-		List inquiryList = inquiryService.selectAll();
+		//List inquiryList = inquiryService.selectAll();
 		
 		//4단계: jsp로 가져가야 하므로 결과저장 
 		ModelAndView mav = new ModelAndView("bookshop/inquiry/list2");
-		mav.addObject("inquiryList", inquiryList);
+		//mav.addObject("inquiryList", inquiryList);
 		
 		return mav;
 	}
@@ -61,4 +62,6 @@ public class InquiryController {
 		
 		return mav;
 	}
+	
+
 }

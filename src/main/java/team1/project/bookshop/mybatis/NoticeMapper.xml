@@ -16,12 +16,24 @@
 	</insert>
 	
 	<update id="update" parameterType="Notice">
-		update notice set title=#{title}, writer=#{writer}, content=#{content}
+		update notice set title=#{title}, writer=#{writer}, content=#{content}, result=#{result}
+		where notice_idx=#{notice_idx}
+	</update>
+	
+	
+	<!-- 조회수 증가 쿼리 -->
+	<update id="hitUp" parameterType="int">
+		update notice set hit=hit+1
 		where notice_idx=#{notice_idx}
 	</update>
 	
 	<delete id="delete" parameterType="int">
 		delete from notice where notice_idx=#{notice_idx}
 	</delete>
+	
+	<select id="selectByWord" parameterType="String" resultType="Notice">
+		select * from notice
+		where title like CONCAT('%', #{title}, '%')
+	</select>
 	
 </mapper>

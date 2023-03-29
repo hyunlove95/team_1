@@ -34,6 +34,7 @@ public class InquiryServiceIpml implements InquiryService{
 
 	@Override
 	public Inquiry select(int inquiry_idx) {
+		inquiryDAO.hitUp(inquiry_idx);
 		return inquiryDAO.select(inquiry_idx);
 	}
 
@@ -53,13 +54,18 @@ public class InquiryServiceIpml implements InquiryService{
 	}
 
 	@Override
-	public void update(Inquiry inquiry) {
+	public void update(Inquiry inquiry) throws InquiryException{
 		inquiryDAO.update(inquiry);
 	}
 
 	@Override
-	public void delete(int inquiry_idx) {
+	public void delete(int inquiry_idx) throws InquiryException{
 		inquiryDAO.delete(inquiry_idx);
+	}
+
+	@Override
+	public List selectByWord(String title) {
+		return inquiryDAO.selectByWord(title);
 	}
 
 }

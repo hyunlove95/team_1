@@ -65,19 +65,20 @@
 					    <div class="col-12">
 					        <div class="card">
 					            <div class="card-header">
-					                <h3 class="card-title">Responsive Hover Table</h3>
-					
-					                <div class="card-tools">
-					                    <div class="input-group input-group-sm" style="width: 150px;">
-					                        <input type="text" name="table_search" class="form-control float-right" placeholder="Search">
-					
-					                        <div class="input-group-append">
-					                            <button type="submit" class="btn btn-default">
-					                                <i class="fas fa-search"></i>
-					                            </button>
-					                        </div>
-					                    </div>
-					                </div>
+					                <h3 class="card-title"></h3>
+
+
+									<div class="card-tools">
+										<div class="input-group mb-1">
+											<input type="text" class="form-control" placeholder="제목으로 검색"
+												id="keyword">
+											<button class="btn btn-outline-primary" type="button"
+												id="bt_search">검색</button>
+										</div>
+									</div>
+								</div>
+					                
+					                
 					            </div>
 					            <!-- /.card-header -->
 					            <div class="card-body table-responsive p-0">
@@ -222,10 +223,28 @@
 			});
 		}
 		
+		function search() {
+			app1.currentList.splice(0,app1.currentList.length);
+			let keyword=$("#keyword").val();
+			$.ajax({
+				url:"/rest/searchInquiry?title="+keyword,
+				type:"get",
+				success:function(result, status, xhr){
+					console.log(result);
+					app1.currentList=result;
+					
+				}
+			});
+		}
+		
 		$(function(){			
 			//등록 이벤트 연결 
 			$("#bt_regist").click(function(){
 				regist();
+			});
+			
+			$("#bt_search").click(function(){
+				search();
 			});
 			
 			getList();
