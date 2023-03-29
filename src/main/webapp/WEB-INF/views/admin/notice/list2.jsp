@@ -65,20 +65,18 @@
 					    <div class="col-12">
 					        <div class="card">
 					            <div class="card-header">
-					                <h3 class="card-title">Responsive Hover Table</h3>
-									
+					                <h3 class="card-title"></h3>
 
-					                <div class="card-tools">
-					                    <div class="input-group input-group-sm" style="width: 150px;">
-					                        <input type="text" name="table_search" class="form-control float-right" placeholder="Search">
-					
-					                        <div class="input-group-append">
-					                            <button type="submit" class="btn btn-default">
-					                                <i class="fas fa-search"></i>
-					                            </button>
-					                        </div>
-					                    </div>
-					                </div>
+
+									<div class="card-tools">
+										<div class="input-group mb-1">
+											<input type="text" class="form-control" placeholder="제목으로 검색"
+												id="keyword">
+											<button class="btn btn-outline-primary" type="button"
+												id="bt_search">검색</button>
+										</div>
+									</div>
+								</div>
 					     
 					     
 					            </div>
@@ -91,6 +89,7 @@
 					                            <th>공지제목</th>
 					                            <th>작성자</th>
 					                            <th>날짜</th>
+					                            <th>조회수</th>
 					                        </tr>
 					                    </thead>
 					                    <tbody>
@@ -144,6 +143,7 @@
 	                <td @click="getDetail(obj.notice_idx)"><a href="#">{{json.title}}</a></td>
 	                <td>{{json.writer}}</td>
 	                <td>{{json.regdate.substring(0, 10)}}</td>
+	                <td>{{json.hit}}</td>
                 </tr>
 			`,
 			props:["obj", "num"], //props 오직 외부에서 전달되는 데이터 받기 위함
@@ -227,10 +227,28 @@
 			});
 		}
 		
+		function search() {
+			app1.currentList.splice(0,app1.currentList.length);
+			let keyword=$("#keyword").val();
+			$.ajax({
+				url:"/rest/searchNotice?title="+keyword,
+				type:"get",
+				success:function(result, status, xhr){
+					console.log(result);
+					app1.currentList=result;
+					
+				}
+			});
+		}
+		
 	$(function(){			
 		//등록 이벤트 연결 
 		$("#bt_regist").click(function(){
 			regist();
+		});
+		
+		$("#bt_search").click(function(){
+			search();
 		});
 		
 		getList();

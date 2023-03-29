@@ -77,13 +77,18 @@
 									<table class="table table-hover">
 										<tbody>
 											<tr>
-												<td><p class="font-weight-bold"><%=inquiry.getTitle()%></p></td>
+												<td>제목</td>
+												<td><%=inquiry.getTitle()%></p></td>
+												<td></td>
+												<td></td>
 												<td></td>
 											</tr>
 										</tbody>
 										<tbody>
 											<tr>
+												<td>카테고리</td>
 												<td><%=inquiry.getInquiry_category().getInquiry_category_name()%></td>
+												<td>작성일</td>
 												<td><%=inquiry.getRegdate()%></td>
 											</tr>
 										</tbody>

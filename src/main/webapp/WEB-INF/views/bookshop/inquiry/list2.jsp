@@ -175,38 +175,62 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-9 col-md-9" id="app1">
-					<div class="container">
-						<table class="table table-hover">
-							<thead>
-								<tr>
-									<th>No</th>
-									<th>카테고리</th>
-									<th>제목</th>
-									<th>날짜</th>
-								</tr>
-							</thead>
-							<tbody>
-								<!-- template는 자체로는 아무런 효과가 없고, 그냥 뷰의 영역임을 지정한다 -->
-								<template v-for="(inquiry, i) in currentList">
-									<inquiry :key="inquiry.inquiry_idx" :num="num-i" :obj="inquiry" />
-								</template>
-								<tr>
-									<td id="paging-area" colspan="5" style="text-align:center">
-									</td>
-								</tr>
-							</tbody>
-							<tbody>
-								<tr>
-									<td></td>
-									<td></td>
-									<td></td>
-									<td></td>
-								</tr>
-							</tbody>
-						</table>
-					</div>
+                
+				<div class="container col-lg-9 col-md-9">
+
+
+						<div class="">
+							<div >
+								<div class="col-5">
+									<div class="input-group mb-3">
+										<input type="text" class="form-control"
+											placeholder="제목으로 검색" id="keyword">
+										<div class="input-group-prepend">
+											<button class="btn btn-outline-primary" type="button"
+												id="bt_search">검색</button>
+										</div>
+									</div>
+								</div>
+							</div>
+					
+
+
+
+							<div id="app1">
+								<table class="table table-hover">
+									<thead>
+										<tr>
+											<th>No</th>
+											<th>카테고리</th>
+											<th>제목</th>
+											<th>날짜</th>
+										</tr>
+									</thead>
+									<tbody>
+										<!-- template는 자체로는 아무런 효과가 없고, 그냥 뷰의 영역임을 지정한다 -->
+										<template v-for="(inquiry, i) in currentList">
+											<inquiry :key="inquiry.inquiry_idx" :num="num-i" :obj="inquiry" />
+										</template>
+										<tr>
+											<td id="paging-area" colspan="5" style="text-align: center">
+											</td>
+										</tr>
+									</tbody>
+									<tbody>
+										<tr>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						
+						</div>
+
 				</div>
+					
 			</div>
         </div>
     </section>
@@ -325,10 +349,29 @@
 			});
 		}
 		
+		function search() {
+			app1.currentList.splice(0,app1.currentList.length);
+			let keyword=$("#keyword").val();
+			$.ajax({
+				url:"/rest/searchInquiry?title="+keyword,
+				type:"get",
+				success:function(result, status, xhr){
+					console.log(result);
+					app1.currentList=result;
+					
+				}
+			});
+		}
+		
 		$(function(){			
 			//등록 이벤트 연결 
 			$("#bt_regist").click(function(){
 				regist();
+			});
+			
+			
+			$("#bt_search").click(function(){
+				search();
 			});
 			
 			getList();

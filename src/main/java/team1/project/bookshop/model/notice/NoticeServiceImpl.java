@@ -21,6 +21,7 @@ public class NoticeServiceImpl implements NoticeService{
 
 	@Override
 	public Notice select(int notice_idx) {
+		noticeDAO.hitUp(notice_idx);
 		return noticeDAO.select(notice_idx);
 	}
 
@@ -37,6 +38,11 @@ public class NoticeServiceImpl implements NoticeService{
 	@Override
 	public void delete(int notice_idx) throws NoticeException{
 		noticeDAO.delete(notice_idx);
+	}
+	
+	@Override
+	public List selectByWord(String title) {
+		return noticeDAO.selectByWord(title);
 	}
 
 }

@@ -28,6 +28,11 @@ public class RestNoticeController {
 		return noticeService.selectAll();
 	}
 	
+	@GetMapping("/searchNotice")
+	public List search(HttpServletRequest request, String title) {
+		return noticeService.selectByWord(title);
+	}
+	
 	@ExceptionHandler(NoticeException.class)
 	public ResponseEntity<Message> handle(NoticeException e){
 		Message message = new Message();

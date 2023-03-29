@@ -45,6 +45,7 @@ public class MybatisNoticeDAO implements NoticeDAO{
 			throw new NoticeException("공지사항 수정실패");
 		}
 	}
+	
 
 	@Override
 	public void delete(int notice_idx) throws NoticeException{
@@ -53,6 +54,18 @@ public class MybatisNoticeDAO implements NoticeDAO{
 			throw new NoticeException("공지사항 삭제실패");
 		}
 	}
+	
+	@Override
+	public void hitUp(int notice_idx) {
+		int result=sqlSessionTemplate.update("Notice.hitUp", notice_idx);
+	}
+
+	@Override
+	public List selectByWord(String title) {
+		return sqlSessionTemplate.selectList("Notice.selectByWord", title);
+	}
+
+
 	
 	
 }

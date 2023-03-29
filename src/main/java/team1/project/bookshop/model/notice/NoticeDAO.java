@@ -10,4 +10,6 @@ public interface NoticeDAO {
 	public void insert(Notice notice);
 	public void update(Notice notice);
 	public void delete(int notice_idx);
+	public void hitUp(int notice_idx);
+	public List selectByWord(String title);
 }

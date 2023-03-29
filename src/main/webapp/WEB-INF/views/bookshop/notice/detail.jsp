@@ -178,14 +178,22 @@
 						<table class="table table-hover">
 							<tbody>
 								<tr>
-									<td><p class="font-weight-bold"><%=notice.getTitle()%></p></td>
+									<td>제목</td>
+									<td><%=notice.getTitle()%></p></td>
+									<td> </td>
+									<td> </td>
+									<td> </td>
 									<td> </td>
 								</tr>
 							</tbody>
 							<tbody>
 								<tr>
+									<td>작성자</td>
 									<td><%=notice.getWriter() %></td>
+									<td>작성일</td>
 									<td><%=notice.getRegdate() %></td>
+									<td>조회수</td>
+									<td><%=notice.getHit()%> </td>
 								</tr>
 							</tbody>
 							<tbody>
@@ -195,7 +203,7 @@
 							</tbody>
 							<tbody>
 								<tr>
-									<td> </td>
+									
 								</tr>
 							</tbody>
 						</table>
