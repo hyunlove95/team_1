@@ -49,12 +49,12 @@
 			let formData = $("#form1").serialize(); 
 				
 			$.ajax({
-				url:"/bookshop/admin/rest/login/admin",
+				url:"/admin/rest/login/admin",
 				type:"POST",
 				data: formData, 
 				success:function(result, status, xhr){
 					alert(result.msg);
-					location.href="/bookshop/admin/main"; //관리자 메인 요청
+					location.href="/admin/main"; //관리자 메인 요청
 				},
 				error:function(xhr, status, err){
 					let json=JSON.parse(xhr.responseText);

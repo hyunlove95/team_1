@@ -16,10 +16,21 @@
 	<!-- Root Context: defines shared resources visible to all other web components -->
 		
 	<!-- 데이터베이스 종류 선택 -->
+		
+	<!-- 데이터베이스 : mysql (aws) -->
+	  
+  	<jee:jndi-lookup 
+		id="dataSource" 
+		jndi-name="aws/mysql"
+		resource-ref="true"/> 
+	
+	<!-- 데이터베이스 : mysql (local) -->
+	<!--  
 	<jee:jndi-lookup 
 		id="dataSource" 
 		jndi-name="jdbc/mysql"
-		resource-ref="true"/>
+		resource-ref="true"/>  
+	-->
 	
 	<!-- 
 		트랜잭션 메니저 선택 (스프링이 지원하는...) 
@@ -52,12 +63,12 @@
 
 	<context:component-scan base-package="team1.project.bookshop.model"/>
 	
-	<!-- 파일업로드를 위한 빈등록  
+	<!-- 파일업로드를 위한 빈등록  -->
 	<beans:bean 
 		id="multipartResolver" 
 		class="org.springframework.web.multipart.commons.CommonsMultipartResolver"
 		p:maxUploadSizePerFile="3145728"/>
-	-->						 
+					 
 							 
 	<!-- jackson data binder 등록 
 		   json 과 자바객체 사이의 자동 변환기(Converter)
@@ -76,9 +87,9 @@
 		 </beans:property>	
 	</beans:bean>	
 	
-<!-- 	<beans:bean 
+ 	<beans:bean 
 		id="fileManager" 
-		class="team1.project.bookshop.util.FileManager"/> -->
+		class="team1.project.bookshop.util.FileManager"/> 
 
 	<!--  암호화 처리 빈 등록  -->
 	<beans:bean id="passConverter" 

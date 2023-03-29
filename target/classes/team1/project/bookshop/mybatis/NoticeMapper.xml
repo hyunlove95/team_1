@@ -3,7 +3,7 @@
 <mapper namespace="Notice">
 	
 	<select id="selectAll" resultType="Notice">
-		select * from notice order by notice_idx asc
+		select * from notice order by notice_idx desc
 	</select>
 	
 	<select id="select" parameterType="int" resultType="Notice">

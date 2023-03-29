@@ -127,7 +127,7 @@
 			$("#bt_edit").click(function(){
 				if(confirm("수정하실래요?")){
 					$("#form1").attr({
-						action:"/bookshop/admin/notice/edit",
+						action:"/admin/notice/edit",
 						method:"post"
 					});
 					$("#form1").submit();		
@@ -141,7 +141,7 @@
 		$("#bt_del").click(function(){
 			if(confirm("삭제하시겠어요?")){
 				$("#form1").attr({
-					action:"/bookshop/admin/notice/delete",
+					action:"/admin/notice/delete",
 					method:"post"
 				});
 				$("#form1").submit();		
@@ -152,13 +152,13 @@
 		//서머노트 적용하기 
 		$(function(){
 			$("#content").summernote({
-				height:200
+				height:400
 			});
 
 					
 			//목록 이벤트 연결 
 			$("#bt_list").click(function(){
-				location.href="/bookshop/admin/notice/list";
+				location.href="/admin/notice/list";
 			});
 		});
 	</script>

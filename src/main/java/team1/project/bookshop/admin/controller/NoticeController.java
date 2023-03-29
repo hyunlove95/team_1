@@ -40,7 +40,7 @@ public class NoticeController {
 		List noticeList = noticeService.selectAll();
 		
 		//4단계: jsp로 가져가야 하므로 결과저장 
-		ModelAndView mav = new ModelAndView("admin/notice/list");
+		ModelAndView mav = new ModelAndView("admin/notice/list2");
 		mav.addObject("noticeList", noticeList);
 		
 		return mav;

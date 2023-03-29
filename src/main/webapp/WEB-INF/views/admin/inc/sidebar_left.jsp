@@ -168,15 +168,15 @@
 							class="nav-link active"> <i class="far fa-circle nav-icon"></i>
 								<p>상품 문의</p>
 						</a></li>
-						<li class="nav-item"><a href="/bookshop/admin/inquiry_category/main" class="nav-link">
+						<li class="nav-item"><a href="/admin/inquiry_category/main" class="nav-link">
 								<i class="far fa-circle nav-icon"></i>
 								<p>1:1 문의 카테고리</p>
 						</a></li>
-						<li class="nav-item"><a href="./index2.html" class="nav-link">
+						<li class="nav-item"><a href="/admin/inquiry/list" class="nav-link">
 								<i class="far fa-circle nav-icon"></i>
 								<p>1:1 문의 접수 리스트</p>
 						</a></li>
-						<li class="nav-item"><a href="/bookshop/admin/notice/list" class="nav-link">
+						<li class="nav-item"><a href="/admin/notice/list" class="nav-link">
 								<i class="far fa-circle nav-icon"></i>
 								<p>공지사항</p>
 						</a></li>

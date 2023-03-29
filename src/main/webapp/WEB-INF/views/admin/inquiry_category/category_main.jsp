@@ -196,7 +196,7 @@
 		------------------------------------------*/
 		function regist(){
 			$.ajax({
-				url:"/bookshop/admin/rest/inquiry_category",
+				url:"/admin/rest/inquiry_category",
 				type:"post",
 				data:{
 					inquiry_category_name:$("input[name='inquiry_category_name']").val()
@@ -219,7 +219,7 @@
 		function getCategoryList(){
 			//서버에서 비동기로 가져다가,  app1의  categoryList 에 대입 
 			$.ajax({
-				url:"/bookshop/admin/rest/inquiry_category",
+				url:"/admin/rest/inquiry_category",
 				type:"get",
 				success:function(result, status, xhr){
 					app1.inquiry_categoryList = result;										
@@ -234,7 +234,7 @@
 			$("#form2 input[name='_method']").val("PUT");
 			
 			$("#form2").attr({
-				action:"/bookshop/admin/inquiry_category/edit",
+				action:"/admin/inquiry_category/edit",
 				method:"POST"
 			});
 			$("#form2").submit();
@@ -253,7 +253,7 @@
 			json['inquiry_category_name']=$("#form2 input[name='inquiry_category_name']").val();
 			
 			$.ajax({
-				url:"/bookshop/admin/rest/inquiry_category",
+				url:"/admin/rest/inquiry_category",
 				type:"PUT",
 				contentType:"application/json;charset=utf-8", /*header 정보구성*/
 				//웹상의 데이터 교환시 데이터형식은 무조건, 문자열이 되어야 한다..
@@ -280,7 +280,7 @@
 			}	
 			
 			$.ajax({
-				url:"/bookshop/admin/rest/inquiry_category/"+$("#form2 input[name='inquiry_category_idx']").val(),
+				url:"/admin/rest/inquiry_category/"+$("#form2 input[name='inquiry_category_idx']").val(),
 				type:"DELETE",
 				success:function(result, status, xhr){
 					getCategoryList();
