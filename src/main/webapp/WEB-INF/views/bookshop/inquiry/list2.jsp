@@ -179,15 +179,15 @@
 				<div class="container col-lg-9 col-md-9">
 
 
-						<div class="">
+						<div class="" >
 							<div >
-								<div class="col-5">
-									<div class="input-group mb-3">
+								<div class="col-5" >
+									<div class="input-group mb-3" >
 										<input type="text" class="form-control"
 											placeholder="제목으로 검색" id="keyword">
 										<div class="input-group-prepend">
 											<button class="btn btn-outline-primary" type="button"
-												id="bt_search">검색</button>
+												id="bt_search" >검색</button>
 										</div>
 									</div>
 								</div>

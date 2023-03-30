@@ -198,6 +198,11 @@
 							</tbody>
 							<tbody>
 								<tr>
+									<td colspan="5" style="text-align: center">내용</td>
+								</tr>
+							</tbody>
+							<tbody>
+								<tr>
 									<td><%=notice.getContent()%></td>
 								</tr>
 							</tbody>
