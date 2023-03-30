@@ -85,7 +85,7 @@
 
 								<div class="form-group row">
 									<div class="col">
-										<textarea class="form-control" id="content" name="content"><%=notice.getContent()%></textarea>
+										<textarea class="form-control" id="content" name="content" ><%=notice.getContent()%></textarea>
 									</div>
 								</div>
 

@@ -195,7 +195,7 @@
 							<div class="col">
 
 								<div class="form-group row">
-									<div class="col" style="text-align: center">
+									<div class="col">
 										<label>문의 유형</label>
 									</div>
 									<div class="col">
@@ -209,7 +209,7 @@
 								</div>
 
 								<div class="form-group row">
-									<div class="col" style="text-align: center">
+									<div class="col">
 										<label>제목</label>
 									</div>
 									<div class="col">
@@ -219,16 +219,16 @@
 								</div>
 								
 								<div class="form-group row">
-									<div class="col" style="text-align: center">
+									<div class="col">
 										<label>내용</label>
 									</div>
-									<div class="col" style="height:400">
-										<textarea rows="10" cols="70" class="form-control" name="content"></textarea>
+									<div class="col">
+										<textarea class="form-control" name="content"></textarea>
 									</div>
 								</div>
 
 								<div class="form-group row">
-									<div class="col" style="text-align: center">
+									<div class="col">
 										<label>사진첨부</label>
 									</div>
 									<div class="col">
@@ -245,7 +245,7 @@
 								</div>
 
 								<div class="form-group row">
-									<div class="col" style="text-align: center">
+									<div class="col">
 										<button type="button" class="btn btn-danger" id="bt_cancel">취소</button>
 										<button type="button" class="btn btn-danger" id="bt_inquiry">문의 접수</button>
 									</div>

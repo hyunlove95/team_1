@@ -195,6 +195,7 @@
 									<td>제목</td>
 									<td><%=inquiry.getTitle()%></p></td>
 									<td> </td>
+									<td> </td>
 								</tr>
 							</tbody>
 							<tbody>
@@ -203,6 +204,11 @@
 									<td><%=inquiry.getInquiry_category().getInquiry_category_name() %></td>
 									<td>작성일</td>
 									<td><%=inquiry.getRegdate() %></td>
+								</tr>
+							</tbody>
+							<tbody>
+								<tr>
+									<td colspan="5" style="text-align: center">내용</td>
 								</tr>
 							</tbody>
 							<tbody>
@@ -216,13 +222,16 @@
 								</tr>
 							</tbody>
 						</table>
-							<div>
+						<div colspan="5" style="text-align: center">
+							<label>첨부 사진</label>
+						</div>
+						<div>
 								<%List<Inquiry_img> inquiry_imgList = inquiry.getInquiry_imgList(); %>
 								<%for(int i=0;i<inquiry_imgList.size();i++){ %>
 								<%Inquiry_img inquiry_img=inquiry_imgList.get(i); %>
 									<img src="/resources/data/<%=inquiry_img.getFilename() %>" alt="" class="box-style">
 								<%} %>
-							</div>
+						</div>
 					</div>
 					<div class="form-group row text-center">
 						<div class="col">
