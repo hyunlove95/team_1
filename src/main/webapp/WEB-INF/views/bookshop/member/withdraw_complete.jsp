@@ -44,17 +44,11 @@ p{
 	<!-- Footer Section Begin -->
 	<%@ include file="../inc/footer.jsp" %>
 	<!-- Footer Section End -->
-	
-	<!-- Search Begin -->
-	<%@ include file="../inc/search.jsp" %>
-	<!-- Search End -->
 
 	<!-- Js Plugins -->
 	<%@ include file="../inc/footer_link.jsp" %>
 
 <script type="text/javascript">
-
-
 $(function(){
 	$("#bt_main").click(function(){
 		location.href="/";

@@ -191,6 +191,7 @@ public class MemberController {
 				memberService.delete(sessionMember.getMember_idx());
 				session.invalidate();
 				redirectAttributes.addFlashAttribute("message", "아이디가 삭제되었습니다.");
+				log.info("삭제완료");
 				mav.setViewName("redirect:/member/withdraw/complete");
 				return mav;
 			}
@@ -208,6 +209,7 @@ public class MemberController {
 			memberService.delete(sessionMember.getMember_idx());
 			session.invalidate();
 			redirectAttributes.addFlashAttribute("message", "아이디가 성공적으로 삭제되었습니다.");
+			log.info("삭제완료");
 			mav.setViewName("redirect:/member/withdraw/complete");
 			return mav;	
 		}

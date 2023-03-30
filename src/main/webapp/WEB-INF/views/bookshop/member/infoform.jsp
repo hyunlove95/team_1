@@ -27,7 +27,10 @@ p{
     	<div class="container">
     		<div class="row m-5">
     			<div class="col">
-				    <form id="form1">
+    			   	<div>
+			    	<h3>추가 정보를 입력해주세요</h3>
+			    	</div>
+    			    <form id="form1">
 				    	<div class="form-group">
 				            <input type="hidden" class="form-control" name="member_idx" value="${member_idx}" readonly="readonly">
 				        </div>

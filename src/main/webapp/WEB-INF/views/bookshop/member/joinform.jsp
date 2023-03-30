@@ -27,6 +27,9 @@ p{
     	<div class="container">
     		<div class="row m-5">
     			<div class="col">
+			    	<div>
+			    	<h3>회원가입</h3>
+			    	</div>
 				    <form id="form1">
 				        <div class="form-group">
 				            <input type="text" class="form-control" placeholder="아이디를 입력해주세요" name="id">

@@ -61,7 +61,7 @@ public class Inquiry_categoryAdvice {
 				uri.equals("/member/sns/naver/callback") ||
 				uri.equals("/member/sns/setInfo") ||
 				uri.equals("/rest/member/sns/setInfo") ||
-				uri.equals("/member/withdraw/complete") 
+				uri.equals("/member/withdraw/complete")
 		) { //제외될 요청 uri (카테고리 처리가 필요없는 요청들...)
 			returnObj=joinPoint.proceed();
 		}else {
