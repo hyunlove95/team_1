@@ -2,13 +2,12 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="Info">
 
-
 	<select id="select" parameterType="int" resultType="Info">
-		select * from info where member_idx=#{member_idx}
+		select * from info where member_idx=#{member.member_idx}
 	</select>
-
+	
 	<select id="selectByMember" parameterType="int" resultType="Info">
-		select * from info where member_idx=#{member_idx}
+		select * from info where member_idx=#{member.member_idx}
 	</select>
 	
 	<insert id="insert" parameterType="Info">

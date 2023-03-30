@@ -3,28 +3,44 @@
   PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
   "https://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
-  <typeAliases>
-  		<typeAlias type="team1.project.bookshop.domain.Admin" 					alias="Admin"/>
-  		<typeAlias type="team1.project.bookshop.domain.Member" 				alias="Member"/>
- 		<typeAlias type="team1.project.bookshop.domain.LoginForm" 			alias="LoginForm"/>
- 		<typeAlias type="team1.project.bookshop.domain.Sns" 						alias="Sns"/>
- 		<typeAlias type="team1.project.bookshop.domain.Info" 						alias="Info"/>
-  		<typeAlias type="team1.project.bookshop.domain.Notice" 					alias="Notice"/>
-  		<typeAlias type="team1.project.bookshop.domain.Inquiry_category" 	alias="Inquiry_category"/>
-  		<typeAlias type="team1.project.bookshop.domain.Inquiry_img" 			alias="Inquiry_img"/>
-  		<typeAlias type="team1.project.bookshop.domain.Inquiry" 					alias="Inquiry"/>
-  </typeAliases>
-  
-  <mappers>
-  		<mapper resource="team1/project/bookshop/mybatis/AdminMapper.xml"/>
-  		<mapper resource="team1/project/bookshop/mybatis/MemberMapper.xml"/>
-    	<mapper resource="team1/project/bookshop/mybatis/LoginFormMapper.xml"/>
-    	<mapper resource="team1/project/bookshop/mybatis/SnsMapper.xml"/>
-    	<mapper resource="team1/project/bookshop/mybatis/InfoMapper.xml"/>
-  		<mapper resource="team1/project/bookshop/mybatis/NoticeMapper.xml"/>
-  		<mapper resource="team1/project/bookshop/mybatis/Inquiry_categoryMapper.xml"/>
-  		<mapper resource="team1/project/bookshop/mybatis/Inquiry_imgMapper.xml"/>
-  		<mapper resource="team1/project/bookshop/mybatis/InquiryMapper.xml"/>
-  </mappers>
-  
+	<typeAliases>
+		<typeAlias type="team1.project.bookshop.domain.Admin" 						alias="Admin"/>
+		<typeAlias type="team1.project.bookshop.domain.Book" 							alias="Book"/>
+		<typeAlias type="team1.project.bookshop.domain.Cart" 							alias="Cart"/>
+		<typeAlias type="team1.project.bookshop.domain.Confirm" 						alias="Confirm"/>
+		<typeAlias type="team1.project.bookshop.domain.Current_ship_condition" alias="Current_ship_condition"/>
+		<typeAlias type="team1.project.bookshop.domain.Info" 							alias="Info"/>
+		<typeAlias type="team1.project.bookshop.domain.Inquiry_category" 			alias="Inquiry_category"/>
+		<typeAlias type="team1.project.bookshop.domain.Inquiry_img" 				alias="Inquiry_img"/>
+		<typeAlias type="team1.project.bookshop.domain.Inquiry" 						alias="Inquiry"/>
+		<typeAlias type="team1.project.bookshop.domain.LoginForm" 					alias="LoginForm"/>
+		<typeAlias type="team1.project.bookshop.domain.Member" 						alias="Member"/>
+		<typeAlias type="team1.project.bookshop.domain.MemberForm" 				alias="MemberForm"/>
+		<typeAlias type="team1.project.bookshop.domain.NewPassCheckForm" 		alias="NewPassCheckForm"/>
+		<typeAlias type="team1.project.bookshop.domain.Notice" 						alias="Notice"/>
+		<typeAlias type="team1.project.bookshop.domain.Order_detail" 				alias="Order_detail"/>
+		<typeAlias type="team1.project.bookshop.domain.Orders" 						alias="Orders"/>
+		<typeAlias type="team1.project.bookshop.domain.Pay_method" 				alias="Pay_method"/>
+		<typeAlias type="team1.project.bookshop.domain.Ship_condition" 			alias="Ship_condition"/>
+		<typeAlias type="team1.project.bookshop.domain.Sns" 							alias="Sns"/>
+	</typeAliases>
+	
+  	<mappers>
+	    <mapper resource="team1/project/bookshop/mybatis/AdminMapper.xml"/>
+	    <mapper resource="team1/project/bookshop/mybatis/BookMapper.xml"/>
+	    <mapper resource="team1/project/bookshop/mybatis/CartMapper.xml"/>
+	    <mapper resource="team1/project/bookshop/mybatis/ConfirmMapper.xml"/>
+	    <mapper resource="team1/project/bookshop/mybatis/Current_ship_conditionMapper.xml"/>
+	    <mapper resource="team1/project/bookshop/mybatis/InfoMapper.xml"/>
+	    <mapper resource="team1/project/bookshop/mybatis/Inquiry_categoryMapper.xml"/>
+	    <mapper resource="team1/project/bookshop/mybatis/Inquiry_imgMapper.xml"/>
+	    <mapper resource="team1/project/bookshop/mybatis/InquiryMapper.xml"/>
+	    <mapper resource="team1/project/bookshop/mybatis/MemberMapper.xml"/>
+	    <mapper resource="team1/project/bookshop/mybatis/NoticeMapper.xml"/>
+	    <mapper resource="team1/project/bookshop/mybatis/Order_detailMapper.xml"/>
+	    <mapper resource="team1/project/bookshop/mybatis/OrdersMapper.xml"/>
+	    <mapper resource="team1/project/bookshop/mybatis/Pay_methodMapper.xml"/>
+	    <mapper resource="team1/project/bookshop/mybatis/Ship_conditionMapper.xml"/>
+	    <mapper resource="team1/project/bookshop/mybatis/SnsMapper.xml"/>
+  	</mappers>
 </configuration>

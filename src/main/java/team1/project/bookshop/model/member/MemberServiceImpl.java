@@ -89,12 +89,15 @@ public class MemberServiceImpl implements MemberService{
 		/**하지만 loginform과 info에게는 member_idx가 없다*/
 		
 		log.info("selectkey member_idx"+member.getMember_idx());
-		int member_idx=member.getMember_idx();
-		
+		log.info("여기가 오류인가?");
 		LoginForm loginForm=member.getLoginForm();
+		log.info("member.getLoginForm");
 		loginForm.setMember(member);
+		log.info("loginForm.setMember");
 		Info info=member.getInfo();
+		log.info("member.getInfo");
 		info.setMember(member);
+		log.info("info.setMember");
 		
 		loginFormDAO.insert(loginForm);
 		infoDAO.insert(info);

@@ -60,14 +60,6 @@
 	                                <div class="tip">2</div>
 	                            </a>
                             </li>
-                            <li>
- 
-                            	<a href="/payment/cartlist.jsp">
-                            		<span class="icon_bag_alt"></span>
-                                	<div class="tip">2</div>
-                                </a>
-                                
-                            </li>
                         </ul>
                     </div>
                 </div>

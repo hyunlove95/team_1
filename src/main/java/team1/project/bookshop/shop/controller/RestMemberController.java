@@ -85,6 +85,12 @@ public class RestMemberController {
 			ResponseEntity entity = new ResponseEntity<JSONObject>(jsonObject, HttpStatus.OK);
 			return entity;
 		}
+		log.info("비밀번호는 {}입니다..",memberForm.getPass());
+		log.info("아이디는 {}입니다..",memberForm.getId());
+		log.info("주소는 {}입니다..",memberForm.getAddress());
+		log.info("상세주소는 {}입니다..",memberForm.getAddress_detail());
+		log.info("이메일 {}입니다..",memberForm.getEmail());
+		log.info("전화번호는 {}입니다..",memberForm.getPhone_number());
 		
 		memberService.regist(memberForm);
 		Message message = new Message();

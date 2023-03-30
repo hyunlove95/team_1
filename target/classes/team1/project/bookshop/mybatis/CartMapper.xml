@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="Cart">
+<resultMap type="Cart" id="CartMap">
+	<id 		column="cart_idx" property="cart_idx"/>
+	<result 	column="quantity" property="quantity"/>
+	
+	<association 
+	column="member_idx"
+	property="member"
+	javaType="Member"
+	select="Member.select"/>
+	
+	<association 
+	column="book_idx"
+	property="book"
+	javaType="Book"
+	select="Book.select"/>
+</resultMap>
+	
+	<select id="selectAll" parameterType="Cart" resultMap="CartMap">
+		select * from cart where member_idx=#{member.member_idx} order by cart_idx desc
+	</select>
+
+	<select id="select" parameterType="Cart" resultType="Cart">
+		select * from cart where cart_idx=#{cart_idx}
+	</select>
+	
+	<!-- 장바구니에 등록할 상품 중복체크 -->
+	<select id="selectDuplicate" parameterType="Cart" resultType="int" >
+		select count(*) from order_detail where book_idx=#{book.book_idx}
+	</select>
+	
+	<insert id="insert" parameterType="Cart">
+		insert into cart(book_idx, member_idx, quantity) values(#{book.book_idx}, #{member.member_idx}, 1)
+	</insert>
+	
+	<update id="update" parameterType="Cart">
+		update set cart quantity=#{quantity} where cart_idx =#{cart_idx}
+	</update>
+	
+	<delete id="delete" parameterType="Cart">
+		delete from cart where cart_idx=#{cart_idx}
+	</delete>
+</mapper>

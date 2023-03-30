@@ -4,8 +4,12 @@
 
 <!-- 관리자 로그인 -->
 <select id="login" parameterType="Admin" resultType="Admin">
-select * from admin
-where admin_id=#{admin_id} and admin_pass=#{admin_pass}
+	select * from admin
+	where admin_id=#{admin_id} and admin_pass=#{admin_pass}
+</select>
+
+<select id="select" parameterType="Admin" resultType="Admin">
+	select * from admin where admin_idx=#{admin_idx}
 </select>
 
 </mapper>
