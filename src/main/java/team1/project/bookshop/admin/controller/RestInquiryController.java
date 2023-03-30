@@ -70,6 +70,7 @@ public class RestInquiryController {
 			ResponseEntity entity = new ResponseEntity<Message>(message, HttpStatus.INTERNAL_SERVER_ERROR);
 			return entity;
 		}
+		
 		@ExceptionHandler(UploadException.class)
 		public ResponseEntity<Message> handle(UploadException e){
 			Message message = new Message();
@@ -78,6 +79,7 @@ public class RestInquiryController {
 			ResponseEntity entity = new ResponseEntity<Message>(message, HttpStatus.INTERNAL_SERVER_ERROR);
 			return entity;
 		}
+		
 		@ExceptionHandler(Inquiry_imgException.class)
 		public ResponseEntity<Message> handle(Inquiry_imgException e){
 			Message message = new Message();

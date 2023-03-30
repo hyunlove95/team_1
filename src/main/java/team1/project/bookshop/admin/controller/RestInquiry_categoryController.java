@@ -2,6 +2,8 @@ package team1.project.bookshop.admin.controller;
 
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,7 +35,7 @@ public class RestInquiry_categoryController {
 	
 	//등록요청 처리 
 	@PostMapping("/inquiry_category")
-	public Message regist(Inquiry_category inquiry_category) {
+	public Message regist(HttpServletRequest request, Inquiry_category inquiry_category) {
 		//3단계:
 		inquiry_categoryService.insert(inquiry_category);
 		Message message = new Message();
@@ -43,7 +45,7 @@ public class RestInquiry_categoryController {
 
 	//목록요청 처리 
 	@GetMapping("/inquiry_category")
-	public List<Inquiry_category> getList(){
+	public List<Inquiry_category> getList(HttpServletRequest request){
 		//3단계 
 		return inquiry_categoryService.selectAll();
 	}
@@ -53,7 +55,7 @@ public class RestInquiry_categoryController {
 	//@ResponseBody   :  자바객체-->  JSON 
 	//@RequestBody  :   JSON --> 자바객체
 	@PutMapping("/inquiry_category")
-	public ResponseEntity<Message> edit(@RequestBody Inquiry_category inquiry_category){
+	public ResponseEntity<Message> edit(HttpServletRequest request, @RequestBody Inquiry_category inquiry_category){
 		logger.info("inquiry_category is "+inquiry_category);
 		//3단계: 
 		inquiry_categoryService.update(inquiry_category);
@@ -73,7 +75,7 @@ public class RestInquiry_categoryController {
 	//이 문제를 가능하게 해주는 코드  경로에 변수부분을{변수}표현,
 	//@PathVariable
 	@DeleteMapping("/inquiry_category/{inquiry_category_idx}")
-	public ResponseEntity<Message> del(@PathVariable int inquiry_category_idx){
+	public ResponseEntity<Message> del(HttpServletRequest request, @PathVariable int inquiry_category_idx){
 		logger.info("넘겨받은  inquiry_category_idx is "+inquiry_category_idx);
 		//3단계: 일시키기
 		inquiry_categoryService.delete(inquiry_category_idx);
@@ -91,7 +93,7 @@ public class RestInquiry_categoryController {
 	
 	
 	@ExceptionHandler(Inquiry_categoryException.class)
-	public ResponseEntity<Message> handle(Inquiry_categoryException e) {
+	public ResponseEntity<Message> handle(HttpServletRequest request, Inquiry_categoryException e) {
 		//HTTP 응답정보를 보다 세밀하게 구성하고 싶다면.. 
 		//Http 응답 메시지를 구성할 수 있는 객체를 지원함..
 		Message message = new Message();		

@@ -60,7 +60,7 @@ public class NoticeController {
 	
 	//수정요청 처리 
 	@RequestMapping(value="/notice/edit", method=RequestMethod.POST)
-	public ModelAndView edit(Notice notice) {
+	public ModelAndView edit(HttpServletRequest request, Notice notice) {
 		//3단계: 
 		noticeService.update(notice);
 		
@@ -72,7 +72,7 @@ public class NoticeController {
 	
 	//삭제요청 처리
 	@RequestMapping(value="/notice/delete", method=RequestMethod.POST)
-	public ModelAndView del(int notice_idx) {
+	public ModelAndView del(HttpServletRequest request, int notice_idx) {
 		//3단계:일 시키기
 		noticeService.delete(notice_idx);
 		

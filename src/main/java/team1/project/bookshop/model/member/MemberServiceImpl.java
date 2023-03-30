@@ -14,6 +14,8 @@ import team1.project.bookshop.domain.Member;
 import team1.project.bookshop.domain.MemberForm;
 import team1.project.bookshop.exception.HashException;
 import team1.project.bookshop.exception.MemberException;
+import team1.project.bookshop.model.inquiry.InquiryDAO;
+import team1.project.bookshop.model.inquiry.Inquiry_imgDAO;
 import team1.project.bookshop.util.MemberConverter;
 import team1.project.bookshop.util.PassConverter;
 
@@ -35,6 +37,13 @@ public class MemberServiceImpl implements MemberService{
 	
 	@Autowired
 	private LoginFormDAO loginFormDAO;
+	
+	@Autowired
+	private InquiryDAO inquiryDAO;
+	
+	@Autowired
+	private Inquiry_imgDAO Inquiry_imgDAO;
+	
 	
 	@Override
 	public List selectAll() {
@@ -142,7 +151,8 @@ public class MemberServiceImpl implements MemberService{
 		//member가 가진 주문내역 삭제
 		
 		//member가 가진 문의내역 삭제
-		
+//		Inquiry_imgDAO.delete(inquiry_idx);
+//		inquiryDAO.delete(member_idx);
 		//주문목록은? 그대로...
 		infoDAO.delete(member_idx);
 		log.info("info 삭제");
