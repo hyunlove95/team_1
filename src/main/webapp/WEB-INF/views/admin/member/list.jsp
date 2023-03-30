@@ -185,7 +185,7 @@
 	//서버에서 상품목록 가져오기
 	function getList(){
 		$.ajax({
-			url:"/admin/rest/member",
+			url:"/admin/rest/member/list",
 			type:"get",
 			success:function(result, status, xhr){
 				app1.memberList = result;
@@ -227,10 +227,10 @@
 	}
 	
 	$(function(){
+		getList();
 		$("#bt_search").click(function(){
 			search();
 		});
-		getList();
 	});
 	</script>
 </body>

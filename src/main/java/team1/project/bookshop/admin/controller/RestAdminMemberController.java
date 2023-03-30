@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import lombok.extern.slf4j.Slf4j;
+import team1.project.bookshop.domain.Member;
 import team1.project.bookshop.model.member.MemberService;
 
 /** :/admin/rest/member */
@@ -32,8 +33,8 @@ public class RestAdminMemberController {
 	}
 	
 	/**admin의 멤버 페이지에서 회원 보여주기*/
-	@GetMapping("/")
-	public List getList(HttpServletRequest request) {
+	@GetMapping("/list")
+	public List<Member> getList(HttpServletRequest request) {
 		return memberService.selectAll();
 	}
 	

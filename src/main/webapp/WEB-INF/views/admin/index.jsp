@@ -88,14 +88,14 @@
 							<!-- small box -->
 							<div class="small-box bg-warning">
 								<div class="inner">
-									<h3>44</h3>
+									<h3 id="memberCount">44</h3>
 
-									<p>User Registrations</p>
+									<p>가입자 수</p>
 								</div>
 								<div class="icon">
 									<i class="ion ion-person-add"></i>
 								</div>
-								<a href="#" class="small-box-footer">More info <i
+								<a href="/admin/member/list" class="small-box-footer">More info <i
 									class="fas fa-arrow-circle-right"></i></a>
 							</div>
 						</div>
@@ -614,5 +614,23 @@
 	</div>
 	<!-- ./wrapper -->
 	<%@ include file="./inc/footer_link.jsp" %>
+	<script type="text/javascript">
+	
+	function getMemberCount(){
+		$.ajax({
+			url:"/admin/rest/member/count",
+			type:"get",
+			success:function(result, status, xhr){
+				console.log(result);
+				$("#memberCount").text(result);
+			}
+		});
+	}
+	
+	$(function(){
+		getMemberCount();
+	});
+	
+	</script>
 </body>
 </html>
