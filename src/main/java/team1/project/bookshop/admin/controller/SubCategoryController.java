@@ -24,7 +24,7 @@ public class SubCategoryController {
 	public ModelAndView getSubcategoryList(HttpServletRequest request) {
 		List subcategory_list = subcategoryService.selectAll();
 		
-		ModelAndView mav = new ModelAndView("admin/subcategorys");
+		ModelAndView mav = new ModelAndView("admin/book/subcategorys");
 		mav.addObject("subcategoryList", subcategory_list);
 		return mav;
 	}

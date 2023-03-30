@@ -27,7 +27,7 @@ public class TopCategoryController {
 	public ModelAndView getTopCategoryList(HttpServletRequest request) {
 		
 		
-		ModelAndView mav = new ModelAndView("admin/topcategorys");
+		ModelAndView mav = new ModelAndView("admin/book/topcategorys");
 		
 		
 		
@@ -49,7 +49,7 @@ public class TopCategoryController {
 		logger.info(""+bookTopCategory);
 		List topcategoryList = bookTopcategoryService.selectByName(bookTopCategory);
 		
-		ModelAndView mav = new ModelAndView("admin/topcategorys");
+		ModelAndView mav = new ModelAndView("admin/book/topcategorys");
 		mav.addObject("topcategoryList", topcategoryList);
 		
 		return mav;
