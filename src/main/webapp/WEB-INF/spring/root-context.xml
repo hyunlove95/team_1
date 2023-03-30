@@ -48,19 +48,21 @@
 	2) 어노테이션 적용법  : <tx: > 등록이 필요함  
 	-->
 	<tx:annotation-driven transaction-manager="transactionManager"/>
-	
+	<!-- SqlSessionFactory를 설정하는 클래스 -->
 	<beans:bean 
 		id="sqlSessionFactoryBean"
 		class="org.mybatis.spring.SqlSessionFactoryBean"
 		p:dataSource-ref="dataSource"
 		p:configLocation="classpath:team1/project/bookshop/mybatis/config.xml"/>
-	
+		
+	<!-- SqlSession을 대체하는 SqlSessionTemplate -->
 	<beans:bean
 		id="sqlSessionTemplate"
 		class="org.mybatis.spring.SqlSessionTemplate">
 		<beans:constructor-arg name="sqlSessionFactory" ref="sqlSessionFactoryBean"/>
 	</beans:bean>
 
+	<!-- model 패키지에 대하여 component 스캔 -->
 	<context:component-scan base-package="team1.project.bookshop.model"/>
 	
 	<!-- 파일업로드를 위한 빈등록  -->
@@ -95,6 +97,10 @@
 	<beans:bean id="passConverter" 
 		class="team1.project.bookshop.util.PassConverter"/>
 	
+	<!-- 멤버 변환 처리 클래스 bean 등록 -->
+	<beans:bean 
+	class="team1.project.bookshop.util.MemberConverter"
+	id="memberConverter"	/>
 	
 	<!-- 이메일 관련 빈 설정 
 	<beans:bean id="javaMailSender" 

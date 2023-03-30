@@ -1,4 +1,6 @@
+<%@page import="team1.project.bookshop.domain.Admin"%>
 <%@ page contentType="text/html;charset=UTF-8"%>
+<%Admin admin = (Admin)session.getAttribute("admin"); %>
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
 	<!-- Brand Logo -->
 	<a href="index3.html" class="brand-link"> <img
@@ -17,7 +19,10 @@
 			</div>
 			<div class="info">
 
-				<a href="#" class="d-block"><%="zino"%></a>
+				<a href="#" class="d-block"><%=admin.getAdmin_name()%></a>
+			</div>
+			<div class="info">
+				<a href="/admin/logout" class="d-block">로그아웃</a>
 			</div>
 		</div>
 
@@ -97,17 +102,9 @@
 						</p>
 				</a>
 					<ul class="nav nav-treeview">
-						<li class="nav-item"><a href="./index.html"
+						<li class="nav-item"><a href="/admin/member/list"
 							class="nav-link active"> <i class="far fa-circle nav-icon"></i>
-								<p>Dashboard v1</p>
-						</a></li>
-						<li class="nav-item"><a href="./index2.html" class="nav-link">
-								<i class="far fa-circle nav-icon"></i>
-								<p>Dashboard v2</p>
-						</a></li>
-						<li class="nav-item"><a href="./index3.html" class="nav-link">
-								<i class="far fa-circle nav-icon"></i>
-								<p>Dashboard v3</p>
+								<p>회원목록</p>
 						</a></li>
 					</ul></li>
 

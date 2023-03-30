@@ -28,13 +28,11 @@
 		                    <input type="password" class="form-control" placeholder="Password" name="admin_pass">
 		                </div>
 		            </div>
-
 		        </div>
 		        <!-- /.card-body -->
 		        <div class="card-footer">
-		            <button type="button" class="btn btn-info" id="bt_loginasync">비동기 로그인</button>
-		            <button type="button" class="btn btn-info" id="bt_login">동기 로그인</button>
-		            <button type="button" class="btn btn-default float-right">Cancel</button>
+		            <button type="button" class="btn btn-info" id="bt_login">로그인</button>
+		            <button type="button" class="btn btn-default float-right" id="bt_cancel">뒤로가기</button>
 		        </div>
 		        <!-- /.card-footer -->
 		    </form>
@@ -43,45 +41,35 @@
 	</div>
 	<!-- ./wrapper -->
 	<%@ include file="../inc/footer_link.jsp" %>
+	<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.3/dist/jquery.slim.min.js"></script>
 	<script type="text/javascript">
-		//비동기방식 요청
-		function loginasync(){
-			let formData = $("#form1").serialize(); 
-				
-			$.ajax({
-				url:"/admin/rest/login/admin",
-				type:"POST",
-				data: formData, 
-				success:function(result, status, xhr){
-					alert(result.msg);
-					location.href="/admin/main"; //관리자 메인 요청
-				},
-				error:function(xhr, status, err){
-					let json=JSON.parse(xhr.responseText);
-					alert(json.msg);
-				}
-			});
-		}
-		
-		//동기방식 요청
-		function login() {
+
+		//동기방식 로그인 요청
+		function login(){
 			$("#form1").attr({
 				action:"/admin/login",
 				method:"post"
 			});
 			$("#form1").submit();
 		}
-		
+	
 		$(function(){
-			$("#bt_loginasync").click(function(){ //비동기 로그인 요청
-				loginasync();		
+			$("#bt_login").click(function(){ //로그인 요청
+				login();
 			});
 			
-			$("#bt_login").click(function(){ //동기 로그인 요청
-				login();		
+			$("#bt_cancel").click(function(){
+				history.back();
 			});
 		});
-	
-	</script>	
+	</script>
 </body>
 </html>
+
+
+
+
+
+
+
+

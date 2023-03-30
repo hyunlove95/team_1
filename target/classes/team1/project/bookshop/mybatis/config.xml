@@ -4,15 +4,23 @@
   "https://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
   <typeAliases>
-  		<typeAlias type="team1.project.bookshop.domain.Admin" 	alias="Admin"/>
-  		<typeAlias type="team1.project.bookshop.domain.Notice" 	alias="Notice"/>
+  		<typeAlias type="team1.project.bookshop.domain.Admin" 					alias="Admin"/>
+  		<typeAlias type="team1.project.bookshop.domain.Member" 				alias="Member"/>
+ 		<typeAlias type="team1.project.bookshop.domain.LoginForm" 			alias="LoginForm"/>
+ 		<typeAlias type="team1.project.bookshop.domain.Sns" 						alias="Sns"/>
+ 		<typeAlias type="team1.project.bookshop.domain.Info" 						alias="Info"/>
+  		<typeAlias type="team1.project.bookshop.domain.Notice" 					alias="Notice"/>
   		<typeAlias type="team1.project.bookshop.domain.Inquiry_category" 	alias="Inquiry_category"/>
-  		<typeAlias type="team1.project.bookshop.domain.Inquiry_img" 	alias="Inquiry_img"/>
-  		<typeAlias type="team1.project.bookshop.domain.Inquiry" 	alias="Inquiry"/>
+  		<typeAlias type="team1.project.bookshop.domain.Inquiry_img" 			alias="Inquiry_img"/>
+  		<typeAlias type="team1.project.bookshop.domain.Inquiry" 					alias="Inquiry"/>
   </typeAliases>
   
   <mappers>
   		<mapper resource="team1/project/bookshop/mybatis/AdminMapper.xml"/>
+  		<mapper resource="team1/project/bookshop/mybatis/MemberMapper.xml"/>
+    	<mapper resource="team1/project/bookshop/mybatis/LoginFormMapper.xml"/>
+    	<mapper resource="team1/project/bookshop/mybatis/SnsMapper.xml"/>
+    	<mapper resource="team1/project/bookshop/mybatis/InfoMapper.xml"/>
   		<mapper resource="team1/project/bookshop/mybatis/NoticeMapper.xml"/>
   		<mapper resource="team1/project/bookshop/mybatis/Inquiry_categoryMapper.xml"/>
   		<mapper resource="team1/project/bookshop/mybatis/Inquiry_imgMapper.xml"/>

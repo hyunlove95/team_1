@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="Member">
+
+<resultMap type="Member" id="memberMap">
+	<id column="member_idx" property="member_idx"/>
+	<result column="id" property="id"/>
+	<result column="name" property="name"/>
+	<result column="email" property="email"/>
+	
+	<!-- sns가입여부 -->
+	<association 
+	column="sns_idx" 
+	property="sns"
+	javaType="Sns" 
+	select="Sns.selectByIdx"/>
+	
+	<!-- 회원정보 -->
+	<collection 
+	column="member_idx"
+	property="info"
+	javaType="team1.project.bookshop.domain.Info"
+	ofType="Info"
+	select="Info.select"/>
+	
+	<!-- 로그인폼 -->
+	<collection
+	column="member_idx"
+	property="loginForm"
+	javaType="team1.project.bookshop.domain.LoginForm"
+	ofType="LoginForm"
+	select="LoginForm.select"
+	/>
+	
+</resultMap>
+
+<!-- 회원관리용 selectAll -->
+<select id="selectAll" resultMap="memberMap">
+	select * from member order by member_idx desc
+</select>
+
+<!-- 회원관리용 count -->
+<select id="selectCountMember" resultType="int">
+	select count(*) from member
+</select>
+
+<!-- 로그인용 -->
+<select id="select" parameterType="int" resultMap="memberMap">
+	select * from member where member_idx=#{member_idx}
+</select>
+
+<!-- id 중복체크용 select-->
+<select id="idCheck" parameterType="String" resultType="int">
+	select count(*) from member where id=#{id}
+</select>
+
+<!-- 회원가입 -->
+<insert id="insert" parameterType="Member">
+	insert into member(id, name, email, sns_idx)
+	values(#{id}, #{name}, #{email}, #{sns.sns_idx})
+	
+	<selectKey
+	order="AFTER"
+	keyColumn="member_idx"
+	keyProperty="member_idx"
+	resultType="int"
+	>
+	select last_insert_id() as member_idx from dual
+	</selectKey>
+</insert>
+
+<!-- 회원정보 수정 -->
+<update id="update" parameterType="Member">
+	update member set name=#{name}, email=#{email}
+	where member_idx=#{member_idx}
+</update>
+
+<!-- 회원 삭제 -->
+<delete id="delete" parameterType="int">
+	delete from member where member_idx=#{member_idx}
+</delete>
+
+<!-- 전체 Form을 가져오는 로그인 -->
+<select id="selectById" parameterType="String" resultMap="memberMap">
+	select * from member where id=#{id}
+</select>
+
+<!-- sns용 로그인 Type (하위테이블은 가져오지 않는다...) -->
+<select id="selectSnsMemberById" parameterType="String" resultType="Member">
+	select * from member where id=#{id}
+</select>
+
+<!-- 관리자 페이지 회원 검색 기능 -->
+<select id="search" parameterType="String" resultMap="memberMap">
+	select * from member where name like concat('%',#{keyword},'%')
+</select>
+
+</mapper>

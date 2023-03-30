@@ -49,8 +49,19 @@ public class Inquiry_categoryAdvice {
 		String uri=request.getRequestURI();
 		
 		if(
-			uri.equals("/rest/member") ||  //비동기방식의 가입 요청은 메뉴 제외 		
-			uri.equals("/member/regist") //동기방식의 가입 요청은 메뉴 제외 			
+				uri.equals("/member/login") ||
+				uri.equals("/member/join") ||
+				uri.equals("/rest/member/idCheck") ||
+				uri.equals("/rest/member/join") ||
+				uri.equals("/rest/member/authform/google") ||
+				uri.equals("/rest/member/authform/kakao") ||
+				uri.equals("/rest/member/authform/naver") ||
+				uri.equals("/member/sns/google/callback") || 
+				uri.equals("/member/sns/kakao/callback") ||
+				uri.equals("/member/sns/naver/callback") ||
+				uri.equals("/member/sns/setInfo") ||
+				uri.equals("/rest/member/sns/setInfo") ||
+				uri.equals("/member/withdraw/complete") 
 		) { //제외될 요청 uri (카테고리 처리가 필요없는 요청들...)
 			returnObj=joinPoint.proceed();
 		}else {

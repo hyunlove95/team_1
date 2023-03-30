@@ -4,55 +4,56 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.aspectj.lang.ProceedingJoinPoint;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.aspectj.lang.Signature;
 
+import lombok.extern.slf4j.Slf4j;
+import team1.project.bookshop.domain.Admin;
 import team1.project.bookshop.exception.AdminException;
 
+@Slf4j
 public class AdminLoginCheckAdvice {
 	
-	private Logger logger=LoggerFactory.getLogger(this.getClass());
-	
-	public Object sessionCheck(ProceedingJoinPoint joinPoint) throws AdminException, Throwable{
-		Object result=null; //proceed 후 반환되는 객체를 담기위한 변수(ModelAndView, String)
+	public Object sessionCheck(ProceedingJoinPoint joinPoint) throws AdminException, Throwable {
 		
-		//ProceedingJoinPoint : 주로 타겟에 대한 정보를 가지고 있다.. 원래 호출하려던 타겟 객체가 무엇인지, 그 타겟 객체의 무슨 메서드를 호출하려했는지, 그 타겟메서드의 매개변수는 무엇인지
+		Object result = null;
+		
 		Class targetClass=joinPoint.getTarget().getClass();
-		Object[] args=joinPoint.getArgs(); //매개변수를 배열로 반환함
+		Object[] args=joinPoint.getArgs();
+		log.info("호출 타겟 클래스 : {}", targetClass.getName());
+		/**aspectj signature*/
+		Signature signature=joinPoint.getSignature();
+		log.info("어드민로그인체크 호출 메서드는 {}", signature.getName());
 		
-		joinPoint.getArgs(); //매개변수를 배열로 반환
-		logger.info("호출하려는 타겟 클래스는 "+targetClass.getName());
-		logger.info("호출하려는 타겟 클래스는 "+args.length);
-		
-		//현재 이 요청에 대해 session에 값이 들어있는지 여부를 조사해보자
-		//원래 호출하려했던 메서드의 매개변수 정보를 현재 대리객체가 추출할수있으므로, 원래 호출하려했던 메서드에는 HttpServletRequest가 명시되어있어야한다..
-		
-		//타겟메서드에서 HttpServletRequest 추출하여 session에 관리자 객체가 들어있는지 체크하기
 		HttpServletRequest request=null;
-		HttpSession session = null;
+		HttpSession session=null;
 		for(int i=0;i<args.length;i++) {
 			if(args[i] instanceof HttpServletRequest) {
-				request = (HttpServletRequest)args[i];
+				request=(HttpServletRequest)args[i];
 			}
 		}
 		
-		//로그인을 체크해야되는 경우와, 그냥 보내야하는 경우는 나눈다
-		String uri = request.getRequestURI(); // /admin/main
-		if(
-			uri.equals("/admin/loginform")|| //로그인폼 요청시 제외
-			uri.equals("/admin/rest/login/admin") || //비동기 로그인 요청시 제외
-			uri.equals("/admin/login") //동기방식으로 로그인 요청이 들어올때 제외
-		) {
-			result = joinPoint.proceed();
-		}else {			
-			
-			//로그인이 필요한 서비스에서만 아래의 코드들이 수행되어야한다..
-			session = request.getSession();
-			if(session.getAttribute("admin")==null) {
-				logger.info("aop에 의한 로그인 체크 : 세션없음");
+		String uri = request.getRequestURI();
+		log.info("uri = {}", uri);
+		
+		if(		/**
+				 * 관리자 로그인 체크하지 않는 경우
+				 * post admin/login에서는 세션을 담는다.
+				 * 여기 어드바이스에서는 세션을 없어도 된다.
+				 */
+				uri.equals("/admin/login") ||
+				uri.equals("/admin/logout")
+				) {
+			result=joinPoint.proceed();
+		}else {
+			//관리자 로그인 체크해야 하는 경우
+			session=request.getSession();
+			Admin admin = (Admin)session.getAttribute("admin");
+			if(admin==null) {
+				log.info("admin 세션 없음");
 				throw new AdminException("로그인이 필요한 서비스입니다");
-			}else {			
-				result = joinPoint.proceed(); //로그인한상태면 그냥 지나가게...
+			}else {
+				log.info("admin = {}", admin);
+				result = joinPoint.proceed();
 			}
 		}
 		

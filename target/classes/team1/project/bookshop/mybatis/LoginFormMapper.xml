@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="LoginForm">
+
+	<!-- pass는 loginform한테만 있다... -->
+	<select id="select" parameterType="int" resultType="LoginForm">
+		select * from loginform where member_idx=#{member_idx}
+	</select>
+
+	<!-- 로그인을 여기서 처리하고 member_idx로 member의 resultmap 가져오자 -->
+	<select id="selectIdxByIdAndPass" parameterType="LoginForm" resultType="int">
+		select member_idx from loginform where id=#{id} and pass=#{pass}
+	</select>
+	
+	<!-- 회원가입 -->
+	<insert id="insert" parameterType="LoginForm">
+		insert into loginform(member_idx, id, pass) values(#{member.member_idx}, #{id}, #{pass})
+	</insert>
+	
+	<!-- update -->
+	<update id="update" parameterType="LoginForm">
+		update loginform set pass=#{pass} where member_idx=#{member.member_idx}
+	</update>
+	
+	<!-- delete는 하위테이블 먼저 -->
+	<delete id="delete" parameterType="int">
+		delete from loginform where member_idx=#{member_idx}
+	</delete>
+	
+</mapper>

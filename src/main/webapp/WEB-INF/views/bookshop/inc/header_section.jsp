@@ -1,9 +1,10 @@
 <%@page import="team1.project.bookshop.domain.Inquiry_category"%>
+<%@page import="team1.project.bookshop.domain.MemberForm"%>
 <%@page import="java.util.List"%>
 <%@ page contentType="text/html;charset=UTF-8"%>
-	<%
-
-	%>
+<%
+	MemberForm member=(MemberForm)session.getAttribute("member");
+%>
     <header class="header">
         <div class="container-fluid">
             <div class="row">
@@ -36,14 +37,29 @@
                 <div class="col-lg-3">
                     <div class="header__right">
                         <div class="header__right__auth">
-                            <a href="/member/loginform">Login</a>
-                            <a href="/member/joinform">Register</a>
+                       		<%if(member==null){ %>
+                            <a href="/member/login">Login</a>
+                            <a href="/member/join">Register</a>
+                           <%}else{ %>
+                            <a href="/member/mypage"><%=member.getName()%>님</a>
+                            <a href="/member/logout">Logout</a>
+                           <%} %>
                         </div>
                         <ul class="header__right__widget">
                             <li><span class="icon_search search-switch"></span></li>
                             <li><a href="#"><span class="icon_heart_alt"></span>
                                 <div class="tip">2</div>
                             </a></li>
+                            <li>
+                             	<%if(member==null){ %>
+	                            <a href="javascript:alert('로그인이 필요한 서비스입니다');">
+								<%}else{ %>
+	                            <a href="/payment/cartlist.jsp">
+	                            <%} %>
+	                            <span class="icon_bag_alt"></span>
+	                                <div class="tip">2</div>
+	                            </a>
+                            </li>
                             <li>
  
                             	<a href="/payment/cartlist.jsp">
