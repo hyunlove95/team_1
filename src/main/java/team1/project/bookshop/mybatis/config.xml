@@ -17,6 +17,8 @@
 		<typeAlias type="team1.project.bookshop.domain.BookType" alias="BookType"/>
 		<typeAlias type="team1.project.bookshop.domain.BookTopCategory" alias="BookTopCategory"/>
 		<typeAlias type="team1.project.bookshop.domain.BookSubCategory" alias="BookSubCategory"/>
+		<typeAlias type="team1.project.bookshop.domain.Cart" alias="Cart"/>
+		<typeAlias type="team1.project.bookshop.domain.Orders" alias="Orders"/>
   </typeAliases>
   
   <mappers>
@@ -33,6 +35,8 @@
   		<mapper resource="team1/project/bookshop/mybatis/Inquiry_categoryMapper.xml"/>
   		<mapper resource="team1/project/bookshop/mybatis/Inquiry_imgMapper.xml"/>
   		<mapper resource="team1/project/bookshop/mybatis/InquiryMapper.xml"/>
+  		<mapper resource="team1/project/bookshop/mybatis/CartMapper.xml"/>
+  		<mapper resource="team1/project/bookshop/mybatis/OrdersMapper.xml"/>
   </mappers>
   
 </configuration>

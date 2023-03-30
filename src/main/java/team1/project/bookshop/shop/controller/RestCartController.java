@@ -2,6 +2,8 @@ package team1.project.bookshop.shop.controller;
 
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,7 +32,7 @@ public class RestCartController {
 	private CartService cartService;
 	
 	@PostMapping("/shop_cart")
-	public ResponseEntity<Message> getCart(Cart cart) {
+	public ResponseEntity<Message> getCart(HttpServletRequest request, Cart cart) {
 		logger.info("Cart에 비동기 등록");
 		
 		Message message = new Message();
@@ -49,7 +51,7 @@ public class RestCartController {
 	}
 	
 	@GetMapping("/cart")
-	public List getCartList(Member member) {
+	public List getCartList(HttpServletRequest request, Member member) {
 		Cart cart = new Cart();
 		cart.setMember(member);
 		cartService.selectAll(cart);
@@ -58,7 +60,7 @@ public class RestCartController {
 	}
 	
 	@DeleteMapping("/cart/{cart_idx}")
-	public ResponseEntity<Message> delCart(@PathVariable int cart_idx){
+	public ResponseEntity<Message> delCart(HttpServletRequest request, @PathVariable int cart_idx){
 		logger.info("넘겨받은 cart_idx="+cart_idx);
 		Cart cart = new Cart();
 		cart.setCart_idx(cart_idx);

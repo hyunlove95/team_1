@@ -281,6 +281,12 @@
                     <mainClass>org.test.int1.Main</mainClass>
                 </configuration>
             </plugin>
+            <!-- 집에서 pom.xml 오류 나서 작성 -->
+            <plugin>
+            	<artifactId>maven-war-plugin</artifactId>
+            	<version>3.2.2</version>
+            </plugin>
+            <!-- 집에서 pom.xml 오류 나서 작성 -->
         </plugins>
     </build>
 </project>

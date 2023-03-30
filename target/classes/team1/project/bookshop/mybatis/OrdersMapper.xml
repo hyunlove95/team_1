@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="Orders">
+	<resultMap type="Orders" id="OrdersMap">
+		<id column="orders_idx" property="orders_idx"/>
+		<result column="order_date" property="order_date"/>
+		<result column="ship_date" property="ship_date"/>
+		<result column="total_pay" property="total_pay"/>
+		
+		<association 
+		column="member_idx"
+		property="member"
+		javaType="Member"
+		select="Member.select"/>
+		
+		<association
+		column="pay_method_idx"
+		property="pay_method"
+		javaType="Pay_method"
+		select="Pay_method.select"/>
+	</resultMap>
+	
+	<!-- 전체 검색 -->
+	<select id="selectAll" resultMap="OrdersMap">
+		select * from orders order by orders_idx desc
+	</select>
+	
+	<!-- 회원별 검색 -->
+	<select id="selectAllByMember" parameterType="Orders" resultMap="OrdersMap">
+		select * from orders where member_idx=#{member.member_idx} order by orders_idx desc
+	</select>
+	
+	<!-- 한 건 검색 -->
+	<select id="select" parameterType="Orders" resultMap="OrdersMap">
+		select * from orders where orders_idx=#{orders_idx}
+	</select>
+	
+	<insert id="insert" parameterType="Orders">
+		insert into orders(member_idx, total_pay, pay_method_idx)
+		values(#{member.member_idx}, #{total_pay}, #{pay_method.pay_method_idx})
+		
+		<selectKey
+		keyColumn="orders_idx"
+		keyProperty="orders_idx"
+		order="AFTER"
+		resultType="int">
+			select last_insert_id() as orders_idx
+		</selectKey>
+	</insert>
+	
+	<delete id="delete" parameterType="Orders">
+		delete from orders where orders_idx=#{orders_idx}
+	</delete>
+</mapper>

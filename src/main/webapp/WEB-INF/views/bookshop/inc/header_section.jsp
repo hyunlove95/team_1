@@ -16,22 +16,16 @@
                 <div class="col-xl-6 col-lg-7">
                     <nav class="header__menu">
                         <ul>
-                            <li class="active"><a href="/bookshop/">Home</a></li>
-                            <% %>
-                            <%%>
-                            <li><a href="#"><%%></a></li>
-                            <% %>
-                            
-                            
+                            <li class="active"><a href="/">Home</a></li>
                             <li><a href="/">도서검색</a></li>
                             <li><a href="#">고객센터</a>
                                 <ul class="dropdown">
-                                    <li><a href="./product-details.html">상품문의</a></li>
                                     <li><a href="/inquiry/registform">1:1문의 접수</a></li>
                                     <li><a href="/inquiry/list">1:1문의 내역</a></li>
                                     <li><a href="/notice/list">공지사항</a></li>      
                                 </ul>
                             </li>
+                            <li><a href="/member/mypage">마이페이지</a></li>
                         </ul>
                     </nav>
                 </div>

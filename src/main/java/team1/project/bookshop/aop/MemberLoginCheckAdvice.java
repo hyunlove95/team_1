@@ -56,7 +56,9 @@ public class MemberLoginCheckAdvice {
 			uri.equals("/rest/book/search/subcategory") ||
 			uri.equals("/rest/booksubcategory") ||
 			uri.equals("/rest/booksubcategory/selectlist") ||
-			uri.equals("/book/search")
+			uri.equals("/book/search") ||
+			uri.equals("/notice/list") ||
+			uri.equals("/notice/detail")
 			
 			
 			) {

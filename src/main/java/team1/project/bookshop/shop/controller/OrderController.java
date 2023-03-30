@@ -2,6 +2,8 @@ package team1.project.bookshop.shop.controller;
 
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,7 +23,7 @@ public class OrderController {
 	private OrdersService ordersService;
 	
 	@GetMapping("/order/list")
-	public ModelAndView getOrderList() {
+	public ModelAndView getOrderList(HttpServletRequest request) {
 		List orderList = ordersService.selectAll();
 		
 		ModelAndView mav = new ModelAndView("admin/order/orderList");
@@ -29,8 +31,10 @@ public class OrderController {
 		return mav;
 	}
 	
+	/**Detail로 가는 GetMapping*/
+	
 	@GetMapping("/ordercomp")
-	public ModelAndView getOrderComp() {
-		return new ModelAndView("shop/shop");
+	public ModelAndView getOrderComp(HttpServletRequest request) {
+		return new ModelAndView("bookshop/shop");
 	}
 }

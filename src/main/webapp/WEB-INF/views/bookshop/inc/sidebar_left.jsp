@@ -6,9 +6,8 @@
   <ul class="navbar-nav">
     <li class="nav-item">
       <a class="navbar-brand">나의 쇼핑</a>
-      <a class="nav-link" href="#">장바구니</a>
-      <a class="nav-link" href="#">주문/배송 조회</a>
-      <a class="nav-link" href="#">반품 신청/조회</a>
+      <a class="nav-link" href="/shop_cart">장바구니</a>
+      <a class="nav-link" href="/shop_order">주문 목록</a>
     </li>
     <li class="nav-item">
       <a class="navbar-brand">나의 정보</a>
@@ -17,9 +16,8 @@
     </li>
     <li class="nav-item"> 
       <a class="navbar-brand">나의 활동</a>
-      <a class="nav-link" href="#">문의하기</a>
-      <a class="nav-link" href="#">문의 내역</a>
-      <a class="nav-link" href="#">리뷰 목록</a>
+      <a class="nav-link" href="/inquiry/registform">문의하기</a>
+      <a class="nav-link" href="/inquiry/list">문의 내역</a>
     </li>
     <li class="nav-item">
       <a class="nav-link" href="#"></a>

@@ -1,6 +1,9 @@
 package team1.project.bookshop.shop.controller;
 
 import java.util.List;
+
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -22,16 +25,16 @@ public class CartController {
 	private Order_detailService order_detailService;
 	
 	@GetMapping("/shop_cart")
-	public ModelAndView getShop_cart(Cart cart) {
+	public ModelAndView getShop_cart(HttpServletRequest request, Cart cart) {
 		List cartList = cartService.selectAll(cart);
 		
-		ModelAndView mav = new ModelAndView("shop/shop_cart");
+		ModelAndView mav = new ModelAndView("bookshop/order/shop_cart");
 		mav.addObject("cartList", cartList);
 		return mav;
 	}
 	
 	@GetMapping("/shop_order")
-	public ModelAndView getShop_order() {
-		return new ModelAndView("shop/shop_order");
+	public ModelAndView getShop_order(HttpServletRequest request) {
+		return new ModelAndView("bookshop/order/shop_order");
 	}
 }
