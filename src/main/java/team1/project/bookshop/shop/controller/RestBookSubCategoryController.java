@@ -2,6 +2,8 @@ package team1.project.bookshop.shop.controller;
 
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,13 +31,13 @@ public class RestBookSubCategoryController {
 	
 	
 	@GetMapping("/booksubcategory")
-	public List getList() {
+	public List getList(HttpServletRequest request) {
 		
 		return bookSubCategoryService.selectAll();
 	}
 
 	@GetMapping("/booksubcategory/selectlist")
-	public List selectList(int bookTopCategory_idx) {
+	public List selectList(int bookTopCategory_idx,HttpServletRequest request) {
 		
 		return bookSubCategoryService.selectByTopCategory(bookTopCategory_idx);
 	}

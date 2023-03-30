@@ -34,7 +34,7 @@ public class BookController {
 		
 		List list = bookService.selectAll();
 		
-		ModelAndView mav = new ModelAndView("admin/books");
+		ModelAndView mav = new ModelAndView("admin/book/books");
 		mav.addObject("bookList", list);
 		
 		return mav;
@@ -73,7 +73,7 @@ public class BookController {
 		
 		Book book =bookService.select(book_idx);
 		
-		ModelAndView mav = new ModelAndView("admin/bookdetail");
+		ModelAndView mav = new ModelAndView("admin/book/bookdetail");
 		mav.addObject("book", book);
 		
 		

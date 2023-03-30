@@ -9,6 +9,7 @@
 <script src="/resources/shop/js/owl.carousel.min.js"></script>
 <script src="/resources/shop/js/jquery.nicescroll.min.js"></script>
 <script src="/resources/shop/js/main.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 
 <%@ page contentType="text/html;charset=UTF-8"%>
 	<!-- jQuery -->

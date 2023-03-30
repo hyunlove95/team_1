@@ -103,6 +103,7 @@
 	
 	const paginate={
 			template:`
+			
 				<li><a :href="link" style='margin:3px'>{{page}}</a></li>
 			`,
 			props:["obj"],

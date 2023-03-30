@@ -2,6 +2,7 @@ package team1.project.bookshop.shop.controller;
 
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.websocket.Session;
 
 import org.slf4j.Logger;
@@ -24,7 +25,7 @@ public class BookController {
 	private BookService bookService;
 
 	@GetMapping("/bookdetail")
-	public ModelAndView getDetail(int book_idx) {
+	public ModelAndView getDetail(int book_idx, HttpServletRequest request) {
 		
 		Book book =bookService.select(book_idx);
 		
@@ -38,10 +39,5 @@ public class BookController {
 
 	
 	
-	@GetMapping("/book/page")
-	public ModelAndView chagePage(int book_idx) {
-		
-		return null;
-	}
 	
 }
