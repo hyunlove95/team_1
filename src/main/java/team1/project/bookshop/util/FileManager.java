@@ -8,6 +8,7 @@ import java.util.List;
 import org.springframework.stereotype.Component;
 import org.springframework.web.multipart.MultipartFile;
 
+import team1.project.bookshop.domain.Book;
 import team1.project.bookshop.domain.Inquiry;
 import team1.project.bookshop.domain.Inquiry_img;
 import team1.project.bookshop.exception.UploadException;
@@ -59,5 +60,25 @@ public class FileManager {
 			throw new UploadException("업로드 실패", e);
 		}
 	}
+	public String save(Book book, String dir) {
+		MultipartFile file = book.getMyfile();
+		
+		
+		String filename = file.getOriginalFilename();
+		
+		
+		String getfilename=createFileName(filename);
 	
+		try {
+			file.transferTo(new File(dir+getfilename));
+		} catch (IllegalStateException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return getfilename;
+	}
 }

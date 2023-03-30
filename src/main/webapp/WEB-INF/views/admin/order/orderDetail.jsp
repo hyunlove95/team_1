@@ -1,5 +1,5 @@
+
 <%@page import="team1.project.bookshop.domain.Ship_condition"%>
-<%@page import="team1.project.bookshop.domain.Orders"%>
 <%@page import="team1.project.bookshop.domain.Book"%>
 <%@page import="java.util.List"%>
 <%@ page contentType="text/html;charset=UTF-8"%>

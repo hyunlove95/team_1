@@ -8,9 +8,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import team1.project.bookshop.domain.Cart;
-import team1.project.bookshop.order.model.CartService;
-import team1.project.bookshop.order.model.Order_detailService;
-import team1.project.bookshop.order.model.member.MemberService;
+import team1.project.bookshop.model.cart.CartService;
+import team1.project.bookshop.model.order_detail.Order_detailService;
+
 
 @Controller
 public class CartController {

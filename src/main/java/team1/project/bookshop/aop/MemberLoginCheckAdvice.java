@@ -49,7 +49,15 @@ public class MemberLoginCheckAdvice {
 			uri.equals("/member/sns/naver/callback") ||
 			uri.equals("/member/sns/setInfo") ||
 			uri.equals("/rest/member/sns/setInfo") ||
-			uri.equals("/member/withdraw/complete") 
+			uri.equals("/member/withdraw/complete") ||
+			uri.equals("/bookdetail") ||
+			uri.equals("/rest/book/list") ||
+			uri.equals("/rest/search/word") ||
+			uri.equals("/rest/book/search/subcategory") ||
+			uri.equals("/rest/booksubcategory") ||
+			uri.equals("/rest/booksubcategory/selectlist") ||
+			uri.equals("/book/search")
+			
 			
 			) {
 				result=joinPoint.proceed();
