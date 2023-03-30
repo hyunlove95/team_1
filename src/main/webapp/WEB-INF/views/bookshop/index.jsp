@@ -1,5 +1,7 @@
-<%@page import="java.util.List"%>
+
 <%@ page contentType="text/html;charset=UTF-8"%>
+
+
 <!DOCTYPE html>
 <html lang="zxx">
 
@@ -26,559 +28,54 @@
     <%@ include file="./inc/header_section.jsp"%>
     <!-- Header Section End -->
 
+	<section class="content">
+	
+		<div class="mt-5">
+			
+			
+			<div class="container">
+				<div class="row">
+					<div class="col-12">
+						<div class="input-group mb-3">
+							<input type="text" class="form-control" placeholder="제목또는 저자로 검색" id="keyword">
+							<div class="input-group-prepend">
+								<button class="btn btn-outline-primary" type="button" id="bt_search">검색</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		
+		</div>
 
-    <!-- Categories Section Begin -->
-    <section class="categories">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-lg-6 p-0">
-                    <div class="categories__item categories__large__item set-bg"
-                    data-setbg="/resources/shop/img/categories/category-1.jpg">
-                    <div class="categories__text">
-                        <h1>Women’s fashion</h1>
-                        <p>Sitamet, consectetur adipiscing elit, sed do eiusmod tempor incidid-unt labore
-                        edolore magna aliquapendisse ultrices gravida.</p>
-                        <a href="#">Shop now</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-6">
-                <div class="row">
-                    <div class="col-lg-6 col-md-6 col-sm-6 p-0">
-                        <div class="categories__item set-bg" data-setbg="/resources/shop/img/categories/category-2.jpg">
-                            <div class="categories__text">
-                                <h4>Men’s fashion</h4>
-                                <p>358 items</p>
-                                <a href="#">Shop now</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-md-6 col-sm-6 p-0">
-                        <div class="categories__item set-bg" data-setbg="/resources/shop/img/categories/category-3.jpg">
-                            <div class="categories__text">
-                                <h4>Kid’s fashion</h4>
-                                <p>273 items</p>
-                                <a href="#">Shop now</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-md-6 col-sm-6 p-0">
-                        <div class="categories__item set-bg" data-setbg="/resources/shop/img/categories/category-4.jpg">
-                            <div class="categories__text">
-                                <h4>Cosmetics</h4>
-                                <p>159 items</p>
-                                <a href="#">Shop now</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-md-6 col-sm-6 p-0">
-                        <div class="categories__item set-bg" data-setbg="/resources/shop/img/categories/category-5.jpg">
-                            <div class="categories__text">
-                                <h4>Accessories</h4>
-                                <p>792 items</p>
-                                <a href="#">Shop now</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- Categories Section End -->
-
-<!-- Product Section Begin -->
-<section class="product spad">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-4 col-md-4">
-                <div class="section-title">
-                    <h4>New product</h4>
-                </div>
-            </div>
-            <div class="col-lg-8 col-md-8">
-                <ul class="filter__controls">
-                    <li class="active" data-filter="*">All</li>
-                    <li data-filter=".women">Women’s</li>
-                    <li data-filter=".men">Men’s</li>
-                    <li data-filter=".kid">Kid’s</li>
-                    <li data-filter=".accessories">Accessories</li>
-                    <li data-filter=".cosmetic">Cosmetics</li>
-                </ul>
-            </div>
-        </div>
-        <div class="row property__gallery">
-            <div class="col-lg-3 col-md-4 col-sm-6 mix women">
-                <div class="product__item">
-                    <div class="product__item__pic set-bg" data-setbg="/resources/shop/img/product/product-1.jpg">
-                        <div class="label new">New</div>
-                        <ul class="product__hover">
-                            <li><a href="img/product/product-1.jpg" class="image-popup"><span class="arrow_expand"></span></a></li>
-                            <li><a href="#"><span class="icon_heart_alt"></span></a></li>
-                            <li><a href="#"><span class="icon_bag_alt"></span></a></li>
-                        </ul>
-                    </div>
-                    <div class="product__item__text">
-                        <h6><a href="#">Buttons tweed blazer</a></h6>
-                        <div class="rating">
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                        </div>
-                        <div class="product__price">$ 59.0</div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-4 col-sm-6 mix men">
-                <div class="product__item">
-                    <div class="product__item__pic set-bg" data-setbg="/resources/shop/img/product/product-2.jpg">
-                        <ul class="product__hover">
-                            <li><a href="img/product/product-2.jpg" class="image-popup"><span class="arrow_expand"></span></a></li>
-                            <li><a href="#"><span class="icon_heart_alt"></span></a></li>
-                            <li><a href="#"><span class="icon_bag_alt"></span></a></li>
-                        </ul>
-                    </div>
-                    <div class="product__item__text">
-                        <h6><a href="#">Flowy striped skirt</a></h6>
-                        <div class="rating">
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                        </div>
-                        <div class="product__price">$ 49.0</div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-4 col-sm-6 mix accessories">
-                <div class="product__item">
-                    <div class="product__item__pic set-bg" data-setbg="/resources/shop/img/product/product-3.jpg">
-                        <div class="label stockout">out of stock</div>
-                        <ul class="product__hover">
-                            <li><a href="img/product/product-3.jpg" class="image-popup"><span class="arrow_expand"></span></a></li>
-                            <li><a href="#"><span class="icon_heart_alt"></span></a></li>
-                            <li><a href="#"><span class="icon_bag_alt"></span></a></li>
-                        </ul>
-                    </div>
-                    <div class="product__item__text">
-                        <h6><a href="#">Cotton T-Shirt</a></h6>
-                        <div class="rating">
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                        </div>
-                        <div class="product__price">$ 59.0</div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-4 col-sm-6 mix cosmetic">
-                <div class="product__item">
-                    <div class="product__item__pic set-bg" data-setbg="/resources/shop/img/product/product-4.jpg">
-                        <ul class="product__hover">
-                            <li><a href="img/product/product-4.jpg" class="image-popup"><span class="arrow_expand"></span></a></li>
-                            <li><a href="#"><span class="icon_heart_alt"></span></a></li>
-                            <li><a href="#"><span class="icon_bag_alt"></span></a></li>
-                        </ul>
-                    </div>
-                    <div class="product__item__text">
-                        <h6><a href="#">Slim striped pocket shirt</a></h6>
-                        <div class="rating">
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                        </div>
-                        <div class="product__price">$ 59.0</div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-4 col-sm-6 mix kid">
-                <div class="product__item">
-                    <div class="product__item__pic set-bg" data-setbg="/resources/shop/img/product/product-5.jpg">
-                        <ul class="product__hover">
-                            <li><a href="img/product/product-5.jpg" class="image-popup"><span class="arrow_expand"></span></a></li>
-                            <li><a href="#"><span class="icon_heart_alt"></span></a></li>
-                            <li><a href="#"><span class="icon_bag_alt"></span></a></li>
-                        </ul>
-                    </div>
-                    <div class="product__item__text">
-                        <h6><a href="#">Fit micro corduroy shirt</a></h6>
-                        <div class="rating">
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                        </div>
-                        <div class="product__price">$ 59.0</div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-4 col-sm-6 mix women men kid accessories cosmetic">
-                <div class="product__item sale">
-                    <div class="product__item__pic set-bg" data-setbg="/resources/shop/img/product/product-6.jpg">
-                        <div class="label sale">Sale</div>
-                        <ul class="product__hover">
-                            <li><a href="img/product/product-6.jpg" class="image-popup"><span class="arrow_expand"></span></a></li>
-                            <li><a href="#"><span class="icon_heart_alt"></span></a></li>
-                            <li><a href="#"><span class="icon_bag_alt"></span></a></li>
-                        </ul>
-                    </div>
-                    <div class="product__item__text">
-                        <h6><a href="#">Tropical Kimono</a></h6>
-                        <div class="rating">
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                        </div>
-                        <div class="product__price">$ 49.0 <span>$ 59.0</span></div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-4 col-sm-6 mix women men kid accessories cosmetic">
-                <div class="product__item">
-                    <div class="product__item__pic set-bg" data-setbg="/resources/shop/img/product/product-7.jpg">
-                        <ul class="product__hover">
-                            <li><a href="img/product/product-7.jpg" class="image-popup"><span class="arrow_expand"></span></a></li>
-                            <li><a href="#"><span class="icon_heart_alt"></span></a></li>
-                            <li><a href="#"><span class="icon_bag_alt"></span></a></li>
-                        </ul>
-                    </div>
-                    <div class="product__item__text">
-                        <h6><a href="#">Contrasting sunglasses</a></h6>
-                        <div class="rating">
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                        </div>
-                        <div class="product__price">$ 59.0</div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-4 col-sm-6 mix women men kid accessories cosmetic">
-                <div class="product__item sale">
-                    <div class="product__item__pic set-bg" data-setbg="/resources/shop/img/product/product-8.jpg">
-                        <div class="label">Sale</div>
-                        <ul class="product__hover">
-                            <li><a href="img/product/product-8.jpg" class="image-popup"><span class="arrow_expand"></span></a></li>
-                            <li><a href="#"><span class="icon_heart_alt"></span></a></li>
-                            <li><a href="#"><span class="icon_bag_alt"></span></a></li>
-                        </ul>
-                    </div>
-                    <div class="product__item__text">
-                        <h6><a href="#">Water resistant backpack</a></h6>
-                        <div class="rating">
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                        </div>
-                        <div class="product__price">$ 49.0 <span>$ 59.0</span></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- Product Section End -->
-
-<!-- Banner Section Begin -->
-<section class="banner set-bg" data-setbg="/resources/shop/img/banner/banner-1.jpg">
-    <div class="container">
-        <div class="row">
-            <div class="col-xl-7 col-lg-8 m-auto">
-                <div class="banner__slider owl-carousel">
-                    <div class="banner__item">
-                        <div class="banner__text">
-                            <span>The Chloe Collection</span>
-                            <h1>The Project Jacket</h1>
-                            <a href="#">Shop now</a>
-                        </div>
-                    </div>
-                    <div class="banner__item">
-                        <div class="banner__text">
-                            <span>The Chloe Collection</span>
-                            <h1>The Project Jacket</h1>
-                            <a href="#">Shop now</a>
-                        </div>
-                    </div>
-                    <div class="banner__item">
-                        <div class="banner__text">
-                            <span>The Chloe Collection</span>
-                            <h1>The Project Jacket</h1>
-                            <a href="#">Shop now</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- Banner Section End -->
-
-<!-- Trend Section Begin -->
-<section class="trend spad">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-4 col-md-4 col-sm-6">
-                <div class="trend__content">
-                    <div class="section-title">
-                        <h4>Hot Trend</h4>
-                    </div>
-                    <div class="trend__item">
-                        <div class="trend__item__pic">
-                            <img src="/resources/shop/img/trend/ht-1.jpg" alt="">
-                        </div>
-                        <div class="trend__item__text">
-                            <h6>Chain bucket bag</h6>
-                            <div class="rating">
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                            </div>
-                            <div class="product__price">$ 59.0</div>
-                        </div>
-                    </div>
-                    <div class="trend__item">
-                        <div class="trend__item__pic">
-                            <img src="/resources/shop/img/trend/ht-2.jpg" alt="">
-                        </div>
-                        <div class="trend__item__text">
-                            <h6>Pendant earrings</h6>
-                            <div class="rating">
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                            </div>
-                            <div class="product__price">$ 59.0</div>
-                        </div>
-                    </div>
-                    <div class="trend__item">
-                        <div class="trend__item__pic">
-                            <img src="/resources/shop/img/trend/ht-3.jpg" alt="">
-                        </div>
-                        <div class="trend__item__text">
-                            <h6>Cotton T-Shirt</h6>
-                            <div class="rating">
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                            </div>
-                            <div class="product__price">$ 59.0</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-4 col-sm-6">
-                <div class="trend__content">
-                    <div class="section-title">
-                        <h4>Best seller</h4>
-                    </div>
-                    <div class="trend__item">
-                        <div class="trend__item__pic">
-                            <img src="/resources/shop/img/trend/bs-1.jpg" alt="">
-                        </div>
-                        <div class="trend__item__text">
-                            <h6>Cotton T-Shirt</h6>
-                            <div class="rating">
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                            </div>
-                            <div class="product__price">$ 59.0</div>
-                        </div>
-                    </div>
-                    <div class="trend__item">
-                        <div class="trend__item__pic">
-                            <img src="/resources/shop/img/trend/bs-2.jpg" alt="">
-                        </div>
-                        <div class="trend__item__text">
-                            <h6>Zip-pockets pebbled tote <br />briefcase</h6>
-                            <div class="rating">
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                            </div>
-                            <div class="product__price">$ 59.0</div>
-                        </div>
-                    </div>
-                    <div class="trend__item">
-                        <div class="trend__item__pic">
-                            <img src="/resources/shop/img/trend/bs-3.jpg" alt="">
-                        </div>
-                        <div class="trend__item__text">
-                            <h6>Round leather bag</h6>
-                            <div class="rating">
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                            </div>
-                            <div class="product__price">$ 59.0</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-4 col-sm-6">
-                <div class="trend__content">
-                    <div class="section-title">
-                        <h4>Feature</h4>
-                    </div>
-                    <div class="trend__item">
-                        <div class="trend__item__pic">
-                            <img src="/resources/shop/img/trend/f-1.jpg" alt="">
-                        </div>
-                        <div class="trend__item__text">
-                            <h6>Bow wrap skirt</h6>
-                            <div class="rating">
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                            </div>
-                            <div class="product__price">$ 59.0</div>
-                        </div>
-                    </div>
-                    <div class="trend__item">
-                        <div class="trend__item__pic">
-                            <img src="/resources/shop/img/trend/f-2.jpg" alt="">
-                        </div>
-                        <div class="trend__item__text">
-                            <h6>Metallic earrings</h6>
-                            <div class="rating">
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                            </div>
-                            <div class="product__price">$ 59.0</div>
-                        </div>
-                    </div>
-                    <div class="trend__item">
-                        <div class="trend__item__pic">
-                            <img src="/resources/shop/img/trend/f-3.jpg" alt="">
-                        </div>
-                        <div class="trend__item__text">
-                            <h6>Flap cross-body bag</h6>
-                            <div class="rating">
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                            </div>
-                            <div class="product__price">$ 59.0</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- Trend Section End -->
-
-<!-- Discount Section Begin -->
-<section class="discount">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-6 p-0">
-                <div class="discount__pic">
-                    <img src="/resources/shop/img/discount.jpg" alt="">
-                </div>
-            </div>
-            <div class="col-lg-6 p-0">
-                <div class="discount__text">
-                    <div class="discount__text__title">
-                        <span>Discount</span>
-                        <h2>Summer 2019</h2>
-                        <h5><span>Sale</span> 50%</h5>
-                    </div>
-                    <div class="discount__countdown" id="countdown-time">
-                        <div class="countdown__item">
-                            <span>22</span>
-                            <p>Days</p>
-                        </div>
-                        <div class="countdown__item">
-                            <span>18</span>
-                            <p>Hour</p>
-                        </div>
-                        <div class="countdown__item">
-                            <span>46</span>
-                            <p>Min</p>
-                        </div>
-                        <div class="countdown__item">
-                            <span>05</span>
-                            <p>Sec</p>
-                        </div>
-                    </div>
-                    <a href="#">Shop now</a>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- Discount Section End -->
-
-<!-- Services Section Begin -->
-<section class="services spad">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-3 col-md-4 col-sm-6">
-                <div class="services__item">
-                    <i class="fa fa-car"></i>
-                    <h6>Free Shipping</h6>
-                    <p>For all oder over $99</p>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-4 col-sm-6">
-                <div class="services__item">
-                    <i class="fa fa-money"></i>
-                    <h6>Money Back Guarantee</h6>
-                    <p>If good have Problems</p>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-4 col-sm-6">
-                <div class="services__item">
-                    <i class="fa fa-support"></i>
-                    <h6>Online Support 24/7</h6>
-                    <p>Dedicated support</p>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-4 col-sm-6">
-                <div class="services__item">
-                    <i class="fa fa-headphones"></i>
-                    <h6>Payment Secure</h6>
-                    <p>100% secure payment</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- Services Section End -->
+		<div class="container mt-5">
+			<div class="row">
+				<div class="col-lg-3 col-md-3">
+					<%@ include file="./inc/sidebar2.jsp" %>	
+				</div>
+				<div class="col-9" id="app1">
+					
+					<div class="row" >
+						<!-- row당 3개의 상품이 들어가야하며 총 9개의 상품을 확인 할 수 있다. -->
+						<template v-for="(book, i) in showList">
+							<book :key="book.book_idx" :obj="book" />
+						</template>
+					</div>
+					
+					<div class="row">
+						<div class="col" style="margin: auto;">
+							<ul class="pagination"  >
+								<template v-for="i in count">
+									<paginate :obj="i" />
+								</template>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+    
 
 <!-- Instagram Begin -->
 <%@ include file="./inc/insta.jsp" %>
@@ -594,6 +91,297 @@
 
 <!-- Js Plugins -->
 <%@ include file="./inc/footer_link.jsp" %>
+<script src="/resources/js/Pager.js"></script>
+<script type="text/javascript">
+	let list;
+	let app1; //상품출력
+	let app2; //사이드바 상위카테고리
+	let app3; //사이드바 하위 카테고리
+	
+	let pager = new Pager();
+	let currentPage = 1;
+	
+	const paginate={
+			template:`
+				<li><a :href="link" style='margin:3px'>{{page}}</a></li>
+			`,
+			props:["obj"],
+			data(){
+				return{
+					page:this.obj,
+					link:"javascript:pageLink("+this.obj+")"
+				}
+			}
+	
+			
+	}
+	
+	
+	const categorys={
+			template:`
+			<div class="card-heading">
+				<a :href="link">{{name}}</a>
+			</div>
+			`,
+			props:["top", "num"],
+			data(){
+				return{
+					name:this.top.bookTopCategory_name,
+					link:"javascript:getSub("+this.top.bookTopCategory_idx+")"
+					
+				}
+			}
+	}
+	
+	
+	const scategorys={
+			template:`
+			
+				<li><a :href="link">{{name}}</a></li>
+			
+			`,
+			props:["sub"],
+			data(){
+				return{
+					name:this.sub.bookSubCategory_name,
+					link:"javascript:searchByCategory("+this.sub.bookSubCategory_idx+")"
+				}
+			}
+			
+	}
+	
+	const book={
+		template:`	
+			<div class="col-lg-4 col-md-6">
+				<div class="product__item">
+					<div class="product__item__pic set-bg" data-setbg="/resources/data/" style="img">
+						<img :src="imglink"/>
+					</div>
+					<div class="product__item__text">
+						<h6>
+							<a :href="link">{{book.book_name}}</a>
+						</h6>
+						<div class="product__price">{{book.price}}</div>
+					</div>
+				</div>
+			</div>
+		`,
+		props:["obj", "num", "filename"],
+		data(){
+			return{
+				img:"background-image: url('/resources/data"+this.obj.filename+"');",
+				book:this.obj,
+				ttest:4,
+				link:"javascript:getDetail("+this.obj.book_idx+")",
+				imglink:"/resources/data/"+this.obj.filename
+			};
+		}
+		
+	}
+	
+	
+	
+	function getList(){	
+		$.ajax({
+			url:"/rest/book/list",
+			type:"GET",
+			success:function(result, status, xhr){
+				app1.bookList=result;
+				
+				pageLink(currentPage);
+				
+				app1.count=pager.totalPage;
+			
+			}
+		});
+	}
+	
+	function getSub(n) {	
+		if(app3.ssList!=null){
+			
+		 	app3.ssList="";
+		}
+		
+		$.ajax({
+			url:"/rest/booksubcategory/selectlist?bookTopCategory_idx="+n,
+			type:"GET",
+			success:function(result, status, xhr){
+			
+				app3.ssList=result;
+			
+				if($("#name")!=null){					
+					$("#name").remove();
+				}
+				$("#selectCategory").append("<div id='name'><h5>"+app3.ssList[0].bookTopCategory.bookTopCategory_name+"</h5><div>")
+			}
+		});
+	}
+	
+	function getCategoryList(){
+		$.ajax({
+			url:"/rest/booksubcategory",
+			type:"GET",
+			success:function(result, status, xhr){
+				app2.subList=result;
+				for(let i=0;i<app2.subList.length;i++){
+					if(app2.topList.length==0){
+						app2.topList.push(app2.subList[i].bookTopCategory);
+					}else{	
+						let size = app2.topList.length;
+						let count=0;
+						for(let k=0;k<size;k++){
+							if(app2.topList[k].bookTopCategory_name==app2.subList[i].bookTopCategory.bookTopCategory_name){
+								count++;
+							}
+						}
+						if(count==0){
+							app2.topList.push(app2.subList[i].bookTopCategory);
+						}
+					
+					}
+					
+					
+				}
+			}
+		});
+	}
+	
+	function searchByCategory(n) {
+		//bookSubCategory_idx
+		
+		
+		app1.bookList.splice(0,app1.bookList.length);
+		
+		$.ajax({
+			url:"/rest/book/search/subcategory?bookSubCategory_idx="+n,
+			type:"GET",
+			success:function(result, status, xhr){
+				console.log(result);
+				app1.bookList=result;
+				
+				pageLink(1);
+				app1.count=pager.totalPage;
+			}
+		});
+	}
+	
+	
+	
+	
+	function init(){
+		
+		
+		app1 = new Vue({
+			el:"#app1",
+			components:{
+				book,
+				paginate
+		
+			},
+			data:{
+				bookList:[],
+				showList:[],
+				num:0,
+				count:9
+			}
+		});
+		
+		
+		app2 = new Vue({
+			el:"#app2",
+			components:{
+				categorys
+			},
+			data:{
+				subList:[],
+				topList:[],
+				count:3
+			}
+		});
+		
+		
+		app3 = new Vue({
+			el:"#app3",
+			components:{
+				scategorys
+			},
+			data:{
+				ssList:[]
+			}
+		});
+		
+		
+		
+		
+	}
+	
+	function pageLink(n){
+		//n=currentpage
+		pager.init(app1.bookList, n);
+		
+		app1.num=pager.num;
+		app1.showList.splice(0,app1.showList.length);
+		
+		
+		console.log("totalRecode:",pager.totalRecode);
+		console.log("pageSize",pager.pageSize);
+		console.log("totalPage", pager.totalPage);
+		console.log("blockSize", pager.bolockSize);
+		console.log("currentPage", pager.currentPage);
+		console.log("firstPage", pager.firstPage);
+		console.log("lastPage", pager.lastPage);
+		console.log("curPos", pager.curPos);
+		console.log("num", pager.num);
+		
+		
+		
+		
+		for(let i=pager.curPos;i<pager.curPos+pager.pageSize;i++){
+			if(1>pager.num)break;
+			console.log("3");
+			pager.num--;
+			app1.showList.push(app1.bookList[i]);
+		}
+		
+	}
+	
+
+	function searching() {
+		
+		let keyword = $("#keyword").val();
+		
+		app1.bookList.splice(0,app1.bookList.length);
+		$.ajax({
+			url:"/rest/search/word?book_name="+keyword,
+			type:"GET",
+			success:function(result, status, xhr){
+				console.log("2");
+				app1.bookList=result;
+				
+				pageLink(1);
+				app1.count=pager.totalPage;
+			}
+		});
+	}
+	
+	function getDetail(idx) {
+		location.href="/bookdetail?book_idx="+idx;
+	}
+	
+	$(function(){
+		init();
+		getList();
+		getCategoryList();
+		getSub(1);
+		
+		
+		$("#bt_search").click(function(){
+			console.log("1");
+			searching();
+		});
+		
+	});
+</script>
 </body>
 
 </html>
