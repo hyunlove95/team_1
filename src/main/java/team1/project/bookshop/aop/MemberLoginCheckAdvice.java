@@ -51,6 +51,7 @@ public class MemberLoginCheckAdvice {
 			uri.equals("/rest/member/sns/setInfo") ||
 			uri.equals("/member/withdraw/complete") 
 			
+			
 			) {
 				result=joinPoint.proceed();
 		}else {
