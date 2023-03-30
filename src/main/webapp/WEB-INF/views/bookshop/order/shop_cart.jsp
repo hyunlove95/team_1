@@ -1,3 +1,4 @@
+<%@page import="team1.project.bookshop.domain.Cart"%>
 <%@page import="java.util.List"%>
 
 <%@ page contentType="text/html;charset=UTF-8"%>
@@ -114,7 +115,7 @@
     <!-- Shop Cart Section End -->
 
     <!-- Instagram Begin -->
-    <%@ include file="../inc/instar.jsp" %>
+    <%@ include file="../inc/insta.jsp" %>
     <!-- Instagram End -->
 
     <!-- Footer Section Begin -->
