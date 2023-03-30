@@ -9,7 +9,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-import team1.project.bookshop.order.model.OrdersService;
+import team1.project.bookshop.model.orders.OrdersService;
+
+
 
 @Controller
 public class OrderController {
